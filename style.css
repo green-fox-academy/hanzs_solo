@@ -1,0 +1,42 @@
+body {
+    margin:0;
+    padding:0;
+    border:0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    background-color: rgb(71, 71, 71);
+    height: 60px;
+}
+h1 {
+    color: white;  
+    padding: 10px 5%;
+    margin: 0;
+}
+
+main{
+    margin: 0 5%;
+}
+
+button{
+    color: white;
+    background-color: rgb(71, 71, 71);
+    display: block;
+}
+
+.valami{
+    margin: 0;
+}
+
+#aTitle {
+    height: 18px;
+    width: 200px;
+    resize: none;
+}
+
+#aContent{
+    height: 150px;
+    width: 450px;
+    resize: none;
+}
