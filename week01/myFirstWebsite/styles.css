@@ -1,0 +1,63 @@
+body {
+    font-family: consolas;
+}
+
+#navBar {
+    text-align: right;   
+    font-size: 20px;
+    background-color: #333333;
+    height: 55px;
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+a {
+    text-transform: uppercase;    
+    text-decoration: underline;
+    color: #ff0099;
+    height:55px;
+}
+#logo {
+}
+
+#main {
+    background-image: url("assets/topography.png");
+    margin: 0 auto; 
+    padding: 0 10%;   
+}
+
+
+#myName {
+    font-size: 72px;
+}
+
+#shortIntro {
+    font-size: 40px;
+    color:#ff0099;
+}
+
+#longIntro {
+    font-size: 25px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+#dash {
+    text-align: center;
+    font-size: 30px;
+}
+
+h3{
+    font-size: 40px;
+}
+
+dt {
+    font-size: 25px;
+}
+dd {
+    font-size: 18px;
+}
+
