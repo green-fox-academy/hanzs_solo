@@ -1,10 +1,22 @@
 package Functions;
 
+// Create the usual class wrapper and main method on your own
+// Write a function called `sum()` that returns the sum of numbers from zero to the given parameter
 public class Summing {
   public static void main(String[] args) {
-    // Create the usual class wrapper and main method on your own
+    int stopAt = 32;
+    int sum = Sum(stopAt);
 
-    // Write a function called `sum()` that returns the sum of numbers from zero to the given parameter
+    //check
+    System.out.println(sum);
 
+  }
+
+  public static int Sum(int number) {
+    int result = 0;
+    for (int i = 1; i <= number; i++) {
+      result += i;
+    }
+    return result;
   }
 }
