@@ -7,6 +7,14 @@ public class PartyIndicator {
     // Write a program that asks for two numbers
     // The first number represents the number of girls that comes to a party, the
     // second represents the number of boys
+    int girls, boys;
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("How much girls came to the party: ");
+    girls = input.nextInt();
+    System.out.println("How much boys came to the party: ");
+    boys = input.nextInt();
+
     //
     // If the the number of girls and boys are equal and 20 or more people are coming to the party
     // it should print: The party is excellent!
@@ -20,24 +28,19 @@ public class PartyIndicator {
     // If no girls are coming, regardless the count of the people
     // it should print: Sausage party
 
-    int girls, boys;
-    Scanner input = new Scanner(System.in);
-
-    System.out.println("How much girls came to the party: ");
-    girls = input.nextInt();
-    System.out.println("How much boys came to the party: ");
-    boys = input.nextInt();
-
+    //changed the execution order
     if (girls == 0) {
       System.out.println("Sausage party...");
-    } else if (girls + boys < 20) {
-      System.out.println("Average Party!");
-    } else if (girls == boys && girls + boys >= 20) {
+    }
+    if (girls == boys && girls + boys >= 20) {
       System.out.println("The party is excellent!");
-    } else if (girls + boys >= 20) {
+    }
+    if (girls + boys >= 20) {
       System.out.println("Quite a cool party!");
     }
-
-
+    if (girls + boys < 20) {
+      System.out.println("Average Party!");
+    }
   }
+
 }

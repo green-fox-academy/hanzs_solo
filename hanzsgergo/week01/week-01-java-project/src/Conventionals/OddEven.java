@@ -5,15 +5,16 @@ import java.util.Scanner;
 public class OddEven {
   public static void main(String[] args) {
     // Write a program that reads a number from the standard input,
-    // then prints "Odd" if the number is odd, or "Even" if it is even
-
-    int number, remaining;
+    int number;
     Scanner input = new Scanner(System.in);
 
-    System.out.println("Check this number: ");
+    System.out.print("Check this number: ");
     number = input.nextInt();
 
-    remaining = number % 2;
+    System.out.println();
+
+    // then prints "Odd" if the number is odd, or "Even" if it is even
+    int remaining = number % 2;
 
       if (remaining == 0) {
           System.out.println("This number is even");
