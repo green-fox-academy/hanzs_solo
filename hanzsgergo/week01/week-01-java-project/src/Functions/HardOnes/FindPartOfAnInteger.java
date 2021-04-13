@@ -7,9 +7,9 @@ public class FindPartOfAnInteger {
     //  or returns an empty array (if the number is not part of any of the integers in the array)
 
     //  Examples:
-//    System.out.println(Arrays.toString(findMatchingIndexes(1, new int[] {1, 11, 34, 52, 61})));
+    System.out.println(Arrays.toString(findMatchingIndexes(1, new int[] {1, 11, 34, 52, 61})));
     //  should print: `[0, 1, 4]`
-//    System.out.println(Arrays.toString(findMatchingIndexes(9, new int[] {1, 11, 34, 52, 61})));
+    System.out.println(Arrays.toString(findMatchingIndexes(9, new int[] {1, 11, 34, 52, 61})));
     //  should print: '[]'
 
     // Note: We are using Arrays.toString() function to print the array returned

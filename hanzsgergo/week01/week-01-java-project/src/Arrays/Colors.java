@@ -13,9 +13,9 @@ public class Colors {
     //   `"orchid", "violet", "pink", "hot pink"`
 
     String[][] colors = {
-        new String[] {"lime", "forest green", "olive", "pale green", "spring green"},
-        new String[] {"orange red", "red", "tomato"},
-        new String[] {"orchid", "violet", "pink", "hot pink"}
+        {"lime", "forest green", "olive", "pale green", "spring green"},
+        {"orange red", "red", "tomato"},
+        {"orchid", "violet", "pink", "hot pink"}
     };
 
 
@@ -24,6 +24,7 @@ public class Colors {
     String[] greens = {"lime", "forest green", "olive", "pale green", "spring green"};
     String[] reds = {"orange red", "red", "tomato"};
     String[] pinks = {"orchid", "violet", "pink", "hot pink"};
+
     String[][] colors2 = {greens, reds, pinks};
 
 
