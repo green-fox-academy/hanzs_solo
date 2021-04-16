@@ -10,28 +10,44 @@ public class gameTryTwo {
     Random random = new Random();
     Scanner scanner = new Scanner(System.in);
     boolean playMode = true;
+    boolean wantsToPlay = true;
+
     List<int[]> bricks = new ArrayList<>();
-
-
     int[] player = {6, 11};
     String playerName = getPlayerName(scanner);
     int playerHealth = 3;
     int score = 0;
 
-    boolean wantsToPlay = true;
-
     while (playMode) {
       addNewBricks(random, bricks);
+      addNewBricks(random,bricks);
+      playerHealth = setPlayerHealth(bricks, player, playerHealth);
+      playMode = setPlayMode(playerHealth, score, wantsToPlay);
       setPlayGround(bricks, player, playerName, playerHealth, score);
       wantsToPlay = getPlayerInputAndSetPosition(scanner, player);
-      playMode = setPlayerHealthAndPlayMode(bricks, player, playerHealth, wantsToPlay);
       gravity(bricks);
       removeOldBricks(bricks);
+      
       score++;
     }
     System.out.println("Game session ended.");
   }
 
+  private static boolean setPlayMode(int playerHealth, int score,
+                                    boolean wantsToPlay) {
+    boolean playMode = true;
+    if (!wantsToPlay) {
+      System.out.println("You quit the game.");
+      System.out.println("Your score is " + score);
+      System.out.println("Game session ended.");
+      playMode = false;
+    }else if (playerHealth < 1) {
+      System.out.println("YOU DIED!");
+      System.out.println("Your score is " + score);
+      playMode = false;
+    }
+    return playMode;
+  }
 
   private static String getPlayerName(Scanner scanner) {
     String playerName = "";
@@ -71,12 +87,12 @@ public class gameTryTwo {
       System.out.println();
     }
 
-    System.out.println("|Player: " + playerName + " |Health: " + playerHealth + " |Score: "+score);
+    System.out
+        .println("|Player: " + playerName + " |Health: " + playerHealth + " |Score: " + score);
   }
 
   private static void setThisSpace(List<int[]> bricks, int[] player, int i, int j,
                                    String playerName) {
-
     boolean isBrick = false;
     boolean isPlayer = false;
 
@@ -96,7 +112,6 @@ public class gameTryTwo {
     } else {
       System.out.print("   ");
     }
-
   }
 
   private static boolean getPlayerInputAndSetPosition(Scanner scanner, int[] player) {
@@ -111,15 +126,14 @@ public class gameTryTwo {
     return true;
   }
 
-  private static boolean setPlayerHealthAndPlayMode(List<int[]> bricks, int[] player,
-                                                    int playerHealth,
-                                                    boolean wantsToPlay) {
+  private static int setPlayerHealth(List<int[]> bricks, int[] player,
+                                     int playerHealth) {
     for (int[] currentBrick : bricks) {
       if (player[0] == currentBrick[0] && player[1] == currentBrick[1]) {
         playerHealth--;
       }
     }
-    return playerHealth > 0 && wantsToPlay;
+    return playerHealth;
   }
 
   private static void gravity(List<int[]> bricks) {

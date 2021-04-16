@@ -9,7 +9,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class CheckerboardBetter {
   public static void drawImage(Graphics graphics) {
     // Fill the canvas with a checkerboard pattern
-    int size = 111;
+    int size = 20;
     drawPattern(graphics, size);
   }
 
