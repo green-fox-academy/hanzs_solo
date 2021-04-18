@@ -23,7 +23,7 @@ public class EverythingGoesToCenter {
   }
 
   public static void drawThis(Graphics graphics, int x, int y) {
-    int spacing = 20;
+    int spacing = 5;
 
     for (int i = 0; i <= WIDTH / spacing; i++) {
     graphics.drawLine(x, y, WIDTH / 2, HEIGHT / 2);

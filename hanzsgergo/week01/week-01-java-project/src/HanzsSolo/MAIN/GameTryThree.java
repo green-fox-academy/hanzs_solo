@@ -1,4 +1,4 @@
-package Basics.Drawing;
+package HanzsSolo.MAIN;
 
 import javax.swing.*;
 
@@ -6,7 +6,7 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class CenteredBoxes {
+public class GameTryThree {
 
   public static void drawImage(Graphics graphics) {
     // Create a function that takes 2 parameters and draws one square
@@ -16,13 +16,20 @@ public class CenteredBoxes {
     // (the squares should not be filled otherwise they will hide each other)
     // Avoid code duplication!
 
+    int size = 20;
+    int rowLength = WIDTH / size;
+    int columnLength = HEIGHT / size;
+    int x = 0;
+    int y = 0;
 
-    int size = 40;
-    int scale = 20;
 
-    for (int i = 0; i < 3; i++) {
-      size += scale;
-      drawCenteredBoxes(graphics, size);
+    for (int currentRow = 0; currentRow < columnLength; currentRow++) {
+      for (int currentRect = 0; currentRect < rowLength; currentRect++) {
+        graphics.drawRect(x, y, size, size);
+        x += size;
+      }
+      x = 0;
+      y += size;
     }
   }
 

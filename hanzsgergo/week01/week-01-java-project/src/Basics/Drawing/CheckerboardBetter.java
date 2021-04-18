@@ -9,13 +9,15 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class CheckerboardBetter {
   public static void drawImage(Graphics graphics) {
     // Fill the canvas with a checkerboard pattern
-    int size = 20;
+    int size = 2;
     drawPattern(graphics, size);
   }
 
   private static void drawPattern(Graphics graphics, int size) {
     int x = 0;
     int y = 0;
+
+
 
     for (int i = 0; i < HEIGHT / size; i++) {
       for (int j = 0; j < WIDTH / size; j++) {

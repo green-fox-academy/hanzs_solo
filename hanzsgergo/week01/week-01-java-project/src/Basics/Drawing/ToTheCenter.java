@@ -18,7 +18,7 @@ public class ToTheCenter {
 
     Random random = new Random();
 
-    for (int i = 0; i < 100000; i++) {
+    for (int i = 0; i < 10000; i++) {
       x = random.nextInt(321);
       y = random.nextInt(321);
       graphics.setColor(new Color(random.nextInt(256),random.nextInt(256),random.nextInt(256)));
@@ -50,6 +50,7 @@ public class ToTheCenter {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       drawImage(graphics);
+      //this.setBackground(new Color(20,20,20));
     }
   }
 }

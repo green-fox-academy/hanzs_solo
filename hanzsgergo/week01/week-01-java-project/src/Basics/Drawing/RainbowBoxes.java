@@ -18,7 +18,7 @@ public class RainbowBoxes {
     //eltértem a feladattól, nem kér colort a function
 
     //CHOOSE A DIVISOR OF WIDTH AND HEIGHT OR THE CODE BREAKS
-    int size = 2;
+    int size = 1;
     drawSquare(graphics, size);
   }
 

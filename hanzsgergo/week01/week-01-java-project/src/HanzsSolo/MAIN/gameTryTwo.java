@@ -27,7 +27,7 @@ public class gameTryTwo {
       wantsToPlay = getPlayerInputAndSetPosition(scanner, player);
       gravity(bricks);
       removeOldBricks(bricks);
-      
+
       score++;
     }
     System.out.println("Game session ended.");
