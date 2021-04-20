@@ -1,4 +1,5 @@
-package Basics.FileIO.Doubled;
+package Basics.FileIO.ReversedOrder;
+
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -8,13 +9,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Doubled {
-  // Create a method that decrypts the duplicated-chars.txt.
-  // Decryption is the process reversing an encryption, i.e. the process
-  // which converts encrypted data into its original form.
+public class ReversedOrder {
 
   public static void main(String[] args) {
-    Path filePath = Paths.get("src/Basics.FileIO/Doubled/duplicated-chars.txt");
+    // Create a method that decrypts reversed-order.txt
+    Path filePath = Paths.get("src/Basics/FileIO/ReversedOrder/reversed-order.txt");
     String appendThis = "_encrypted";
 
     decryptThisMess(filePath, appendThis);
@@ -32,24 +31,13 @@ public class Doubled {
       return;
     }
 
-    //we gonna save here the new content
+    //we gonna save in this the new content
     List<String> newContent = new ArrayList<>();
 
-    //iterate trough the lines of original content
-    for (String line : content) {
-      //save line characters in a char array
-      char[] chars = line.toCharArray();
 
-      List<Character> charList = new ArrayList<>();
-
-      //append every second character to the newLine String
-      StringBuilder newLine = new StringBuilder();
-      for (int i = 0; i < chars.length; i += 2) {
-        newLine.append(chars[i]);
-      }
-
-      //add this string to the new content
-      newContent.add(newLine.toString());
+    //iterate trough the lines in reverse order and add each to newContent
+    for (int i = content.size()-1; i >= 0; i--) {
+      newContent.add(content.get(i));
     }
 
     //create or overwrite the encrypted file
@@ -61,4 +49,3 @@ public class Doubled {
     }
   }
 }
-

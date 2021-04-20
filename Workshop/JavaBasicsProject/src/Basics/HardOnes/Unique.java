@@ -1,5 +1,7 @@
 package Basics.HardOnes;
 
+import java.util.Arrays;
+
 public class Unique {
   public static void main(String[] args) {
 
@@ -23,6 +25,8 @@ public class Unique {
       int currentNumber = original[i];
     }
 
+    //test
+    System.out.println(Arrays.toString(simple));
   }
 
 }
