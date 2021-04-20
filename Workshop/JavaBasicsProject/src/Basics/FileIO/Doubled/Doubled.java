@@ -1,4 +1,4 @@
-package FileIO.Doubled;
+package Basics.FileIO.Doubled;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -6,7 +6,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Doubled {
@@ -15,7 +14,7 @@ public class Doubled {
   // which converts encrypted data into its original form.
 
   public static void main(String[] args) {
-    Path filePath = Paths.get("src/FileIO/Doubled/duplicated-chars.txt");
+    Path filePath = Paths.get("src/Basics.FileIO/Doubled/duplicated-chars.txt");
     String appendThis = "_encrypted";
 
     decryptThisMess(filePath, appendThis);

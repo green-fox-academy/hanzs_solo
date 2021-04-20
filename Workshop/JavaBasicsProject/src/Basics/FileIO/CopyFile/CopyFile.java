@@ -1,13 +1,10 @@
-package FileIO.CopyFile;
+package Basics.FileIO.CopyFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CopyFile {
@@ -18,8 +15,8 @@ public class CopyFile {
   //  - path and name of the target file
   // It should return a boolean that shows if the copy was successful
   public static void main(String[] args) {
-    String sourcePathAsString = "src/FileIO/CopyFile/duplicated-chars.txt";
-    String targetPathAsString = "src/FileIO/CopyFile/target.txt";
+    String sourcePathAsString = "src/Basics.FileIO/CopyFile/duplicated-chars.txt";
+    String targetPathAsString = "src/Basics.FileIO/CopyFile/target.txt";
 
     boolean isSuccessful = copyContent(sourcePathAsString,targetPathAsString);
 

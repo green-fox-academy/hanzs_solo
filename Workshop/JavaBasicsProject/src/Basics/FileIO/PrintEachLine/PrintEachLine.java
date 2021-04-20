@@ -1,4 +1,4 @@
-package FileIO.PrintEachLine;
+package Basics.FileIO.PrintEachLine;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -6,7 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class PrintEachLine {
@@ -17,7 +16,7 @@ public class PrintEachLine {
     // it should print the following error message: "Unable to read file: my-file.txt".
 
                                                            //wrong Path
-    Path filePath = Paths.get("src/FileIO/PrintEachLine/your-file.txt");
+    Path filePath = Paths.get("src/Basics.FileIO/PrintEachLine/your-file.txt");
     List<String> fileContent = new ArrayList<>();
     fileContent = getFileContent(filePath);
 

@@ -1,10 +1,9 @@
-package FileIO.CountLines;
+package Basics.FileIO.CountLines;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
 
 public class CountLines {
   public static void main(String[] args) {
@@ -23,7 +22,7 @@ public class CountLines {
   }
 
   private static int getNumberOfLines(String fileName) {
-    Path filePath = Paths.get("src/FileIO/CountLines/" + fileName);
+    Path filePath = Paths.get("src/Basics.FileIO/CountLines/" + fileName);
     try {
       return Files.readAllLines(filePath).size();
     } catch (IOException e) {

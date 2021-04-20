@@ -1,4 +1,4 @@
-package FileIO.DivideByZero;
+package Basics.FileIO.DivideByZero;
 
 public class DivideByZero {
   public static void main(String[] args) {

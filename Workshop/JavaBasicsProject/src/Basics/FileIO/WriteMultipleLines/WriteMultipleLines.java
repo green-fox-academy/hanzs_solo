@@ -1,6 +1,5 @@
-package FileIO.WriteMultipleLines;
+package Basics.FileIO.WriteMultipleLines;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,7 +21,7 @@ public class WriteMultipleLines {
 
 
   public static void main(String[] args) {
-    String pathAsString = "src/FileIO/WriteMultipleLines/geri-vagyok.txt";
+    String pathAsString = "src/Basics.FileIO/WriteMultipleLines/geri-vagyok.txt";
     String word = "Geri vagyok!";
     int number = 10;
 
