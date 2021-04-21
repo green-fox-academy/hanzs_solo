@@ -9,8 +9,8 @@ public class Animal {
     //  Every animal can drink() which decreases its thirst by one
     //  Every animal can play() which increases both its hunger and thirst by one
 
-  int thirst = 50;
-  int hunger = 50;
+  private int thirst = 50;
+  private int hunger = 50;
 
   public void eat(){
     hunger--;

@@ -28,5 +28,4 @@ public class Unique {
     //test
     System.out.println(Arrays.toString(simple));
   }
-
 }

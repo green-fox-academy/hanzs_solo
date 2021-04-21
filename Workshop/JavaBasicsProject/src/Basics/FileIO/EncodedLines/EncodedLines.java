@@ -1,4 +1,5 @@
-package Basics.FileIO.ReversedLines;
+package Basics.FileIO.EncodedLines;
+
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -8,11 +9,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReversedLines {
+public class EncodedLines {
 
   public static void main(String[] args) {
-    // Create a method that decrypts reversed-lines.txt
-    Path filePath = Paths.get("src/Basics/FileIO/ReversedLines/reversed-lines.txt");
+    // Create a method that decrypts encoded-lines.txt
+    Path filePath = Paths.get("src/Basics/FileIO/EncodedLines/encoded-lines.txt");
     String appendThis = "_encrypted";
 
     decryptThisMess(filePath, appendThis);
@@ -38,13 +39,18 @@ public class ReversedLines {
       //save line characters in a char array
       char[] chars = line.toCharArray();
 
-      //append every character to the newLine String
+      //if char is not 'space' then decrease its decimal code by 1
+      //build the new line with new characters
       StringBuilder newLine = new StringBuilder();
-      for (int i = chars.length - 1; i >= 0; i--) {
-        newLine.append(chars[i]);
+      for (char oldChar : chars) {
+        int charDec = oldChar;
+        if (oldChar != ' ') {
+          charDec--;
+        }
+        char newChar = (char) charDec;
+        newLine.append(newChar);
       }
-
-      //add this string to the new content
+      //add this new line to the new content
       newContent.add(newLine.toString());
     }
 

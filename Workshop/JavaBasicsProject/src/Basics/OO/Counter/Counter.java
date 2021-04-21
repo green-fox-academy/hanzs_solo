@@ -10,13 +10,13 @@ package Basics.OO.Counter;
 
 
 public class Counter {
-  Integer counter = 0;
-  Integer initialValue = counter;
+  private Integer counter = 0;
+  private Integer initialValue = counter;
 
-  public Counter() {
+  Counter() {
   }
 
-  public Counter(Integer counter) {
+  Counter(Integer counter) {
     this.counter = counter;
     this.initialValue = counter;
   }

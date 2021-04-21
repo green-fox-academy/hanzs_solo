@@ -13,7 +13,7 @@ public class Sharpie {
   float width;
   float inkAmount = 100;
 
-  public Sharpie(String color, float width) {
+  Sharpie(String color, float width) {
     this.color = color;
     this.width = width;
   }

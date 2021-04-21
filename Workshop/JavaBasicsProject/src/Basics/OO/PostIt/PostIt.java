@@ -5,7 +5,7 @@ public class PostIt {
   String text;
   String color;
 
-  public PostIt(String backgroundColor, String text, String color) {
+  PostIt(String backgroundColor, String text, String color) {
     this.backgroundColor = backgroundColor;
     this.text = text;
     this.color = color;

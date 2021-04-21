@@ -19,14 +19,43 @@ public class Logs {
     Path filePath = Paths.get("src/Basics/FileIO/Logs/log.txt");
 
     List<String[]> separatedContent = getSeparateContent(filePath);
+    List<String> uniqueIPs = getUniqueIPs(separatedContent);
+    double ratio = getGETPOSTRatio(separatedContent);
 
-    getUniqueIPs(separatedContent);
-
+    //test
+    System.out.println("Number of unique IPs: "+ uniqueIPs.size());
+    System.out.println("GETs/POSTs = "+ratio);
   }
 
-  private static void getUniqueIPs(List<String[]> separatedContent) {
-    List<String> ips = new ArrayList<>();
+  private static double getGETPOSTRatio(List<String[]> separatedContent) {
+    int gets = 0;
+    int posts = 0;
+    for (String[] line : separatedContent){
+      if (line[2].equals("GET /")){
+        gets++;
+      }
+      if (line[2].equals("POST /")){
+        posts++;
+      }
+    }
+    return (double) gets/posts;
+  }
 
+  private static List<String> getUniqueIPs(List<String[]> separatedContent) {
+    List<String> uniqueIPs = new ArrayList<>();
+    for (String[] lines : separatedContent) {
+      boolean already = false;
+      for (String uniqueIP : uniqueIPs) {
+        if (lines[1].equals(uniqueIP)) {
+          already = true;
+          break;
+        }
+      }
+      if (!already) {
+        uniqueIPs.add(lines[1]);
+      }
+    }
+    return uniqueIPs;
   }
 
   private static List<String[]> getSeparateContent(Path filePath) {
@@ -41,6 +70,7 @@ public class Logs {
     List<String[]> separatedContent = new ArrayList<>();
     for (String line : content) {
       String[] separatedLine = line.split("   ");
+      //System.out.println(separatedLine[1]);
       separatedContent.add(separatedLine);
     }
 
