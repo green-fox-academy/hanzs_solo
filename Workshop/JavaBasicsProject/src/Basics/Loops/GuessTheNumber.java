@@ -21,19 +21,16 @@ public class GuessTheNumber {
     System.out.println("");
 
     while (guess != 8) {
-        if (guess > storedNumber) {
-            System.out.println("The stored number is lower");
-        }
-        if (guess < storedNumber) {
-            System.out.println("The stored number is higher");
-        }
+      if (guess > storedNumber) {
+        System.out.println("The stored number is lower");
+      }
+      if (guess < storedNumber) {
+        System.out.println("The stored number is higher");
+      }
       System.out.print("Guess one more time: ");
       guess = input.nextInt();
-      System.out.println("");
+      System.out.println();
     }
-      if (guess == 8) {
-          System.out.println("You found the number: 8");
-      }
-
+    System.out.println("You found the number: 8");
   }
 }

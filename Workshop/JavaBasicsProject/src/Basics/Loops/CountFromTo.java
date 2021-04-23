@@ -37,7 +37,6 @@ public class CountFromTo {
         }
     } while (!bigger);
 
-
     while (from <= to) {
       System.out.println(from);
       from++;

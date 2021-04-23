@@ -1,6 +1,4 @@
 package Basics.FileIO.Lottery;
-
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -73,12 +71,9 @@ public class Lottery {
     //version 3 (baszógép)
     numbersWithFrequency.sort(Comparator.comparing(valami -> valami[1]));
 
-    //saving data
-    String fiveMostCommon = numbersWithFrequency.get(89)[0] + " " +
-        numbersWithFrequency.get(88)[0] + " " +
-        numbersWithFrequency.get(87)[0] + " " +
-        numbersWithFrequency.get(86)[0] + " " +
-        numbersWithFrequency.get(85)[0];
-    System.out.println(fiveMostCommon);
+    //printing data
+    for (int i = 89; i >= 85; i--) {
+      System.out.print(numbersWithFrequency.get(i)[0] + " ");
+    }
   }
 }

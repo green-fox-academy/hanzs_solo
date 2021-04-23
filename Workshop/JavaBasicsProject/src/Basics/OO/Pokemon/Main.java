@@ -18,8 +18,9 @@ public class Main {
 
     // Which pokemon should Ash use?
     // Write the necessary code to get the name of the right pokemon and print it:
-    Pokemon.choosePokemonAgainstOpponent(pokemonListOfAsh, wildPokemon);
-    System.out.print("I choose you, ");
+    System.out.print("I choose you, " +
+        Pokemon.choosePokemonAgainstOpponent(pokemonListOfAsh, wildPokemon).name + "!");
+
   }
 
   private static List<Pokemon> initializePokemons() {

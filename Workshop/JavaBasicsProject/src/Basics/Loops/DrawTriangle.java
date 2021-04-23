@@ -25,11 +25,11 @@ public class DrawTriangle {
         currentRow = 0;
         while (currentRow < rows) {
             stars = 0;
-            while (stars < currentRow) {
+            while (stars <= currentRow) {
                 System.out.print("*");
                 stars++;
             }
-            System.out.println("");
+            System.out.println();
             currentRow++;
         }
 

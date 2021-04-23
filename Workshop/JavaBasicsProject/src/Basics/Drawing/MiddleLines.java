@@ -1,5 +1,6 @@
 package Basics.Drawing;
 
+import java.security.spec.RSAOtherPrimeInfo;
 import javax.swing.*;
 
 import java.awt.*;
@@ -14,6 +15,9 @@ public class MiddleLines {
     // draw a green vertical line to the canvas' middle
     graphics.setColor(Color.GREEN);
     graphics.drawLine(WIDTH/2,0,WIDTH/2,HEIGHT);
+
+
+    System.out.println("dasad");
 
 
   }

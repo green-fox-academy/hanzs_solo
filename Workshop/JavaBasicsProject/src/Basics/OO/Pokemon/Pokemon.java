@@ -19,7 +19,9 @@ public class Pokemon {
   public static Pokemon choosePokemonAgainstOpponent(List<Pokemon> pokemonList, Pokemon opponent) {
 
     int bestSuccessRate = 0;
-    Pokemon bestPokemonForTask;
+    Random random = new Random(); //in case we are fucked
+    Pokemon bestPokemonForTask =
+        pokemonList.get(random.nextInt(pokemonList.size() - 1)); //in case we are fucked
     for (Pokemon myPokemon : pokemonList) {
       boolean opponentCounters = false;
       boolean mineCounters = false;
@@ -29,22 +31,20 @@ public class Pokemon {
 
       if (!opponentCounters && !mineCounters) {
         successRate = 1;
-      }else if (opponentCounters && mineCounters) {
+      } else if (opponentCounters && mineCounters) {
         successRate = 2;
-      }else if (opponentCounters) {
+      } else if (opponentCounters) {
         successRate = 0;
-      }else {
+      } else {
         successRate = 3;
-      } 
+      }
 
-      if (successRate > bestSuccessRate){
+      if (successRate > bestSuccessRate) {
         bestSuccessRate = successRate;
         bestPokemonForTask = myPokemon;
       }
     }
-    //in case we are fucked
-    Random random = new Random();
-    bestPokemonForTask = pokemonList.get(random.nextInt(pokemonList.size()-1));
+
 
     return bestPokemonForTask;
   }

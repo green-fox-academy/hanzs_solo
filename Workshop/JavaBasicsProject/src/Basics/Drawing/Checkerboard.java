@@ -11,7 +11,6 @@ public class Checkerboard {
   public static void drawImage(Graphics graphics) {
     // Fill the canvas with a checkerboard pattern
 
-
     //CHOOSE A DIVISOR OF WIDTH AND HEIGHT OR THE CODE BREAKS
     int size = 111;
     drawSquare(graphics, size);
