@@ -39,7 +39,7 @@ public class WriteMultipleLines {
 
     //write content list into file
     try {
-      Files.write(path,content);
+      Files.write(path, content);
     } catch (IOException e) {
       e.printStackTrace();
     }

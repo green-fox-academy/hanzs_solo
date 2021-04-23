@@ -23,7 +23,7 @@ public class BlogPost {
     this.authorName = authorName;
   }
 
-  public void postToBlog(){
+  public void postToBlog() {
     System.out.println(title);
     System.out.println(text);
     System.out.println(authorName);

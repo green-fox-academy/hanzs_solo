@@ -14,15 +14,15 @@ public class Blog {
 
   List<BlogPost> blogPostList = new ArrayList<>();
 
-  public void add(BlogPost blogPost){
+  public void add(BlogPost blogPost) {
     blogPostList.add(blogPost);
   }
 
-  public void delete(int index){
+  public void delete(int index) {
     blogPostList.remove(index);
   }
 
-  public void update(int index, BlogPost blogPost){
+  public void update(int index, BlogPost blogPost) {
     blogPostList.remove(index);
     blogPostList.add(blogPost);
   }

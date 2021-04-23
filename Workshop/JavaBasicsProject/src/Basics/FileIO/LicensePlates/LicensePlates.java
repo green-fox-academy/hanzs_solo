@@ -87,8 +87,8 @@ public class LicensePlates {
       e.printStackTrace();
     }
     List<String[]> sepContent = new ArrayList<>();
-    for(String line:content){
-    sepContent.add(line.split("\t"));
+    for (String line : content) {
+      sepContent.add(line.split("\t"));
 
     }
 

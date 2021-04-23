@@ -23,22 +23,22 @@ public class Logs {
     double ratio = getGETPOSTRatio(separatedContent);
 
     //test
-    System.out.println("Number of unique IPs: "+ uniqueIPs.size());
-    System.out.println("GETs/POSTs = "+ratio);
+    System.out.println("Number of unique IPs: " + uniqueIPs.size());
+    System.out.println("GETs/POSTs = " + ratio);
   }
 
   private static double getGETPOSTRatio(List<String[]> separatedContent) {
     int gets = 0;
     int posts = 0;
-    for (String[] line : separatedContent){
-      if (line[2].equals("GET /")){
+    for (String[] line : separatedContent) {
+      if (line[2].equals("GET /")) {
         gets++;
       }
-      if (line[2].equals("POST /")){
+      if (line[2].equals("POST /")) {
         posts++;
       }
     }
-    return (double) gets/posts;
+    return (double) gets / posts;
   }
 
   private static List<String> getUniqueIPs(List<String[]> separatedContent) {

@@ -6,7 +6,7 @@ public class Student {
     System.out.println("the student is actually learning");
   }
 
-  public void question(Teacher teacher){
+  public void question(Teacher teacher) {
     teacher.giveAnswer();
   }
 }

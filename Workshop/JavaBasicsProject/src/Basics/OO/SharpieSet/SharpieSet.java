@@ -13,23 +13,23 @@ public class SharpieSet {
 
   List<Sharpie> sharpieList = new ArrayList<>();
 
-  public void add(Sharpie sharpie){
+  public void add(Sharpie sharpie) {
     sharpieList.add(sharpie);
   }
 
-  public int countUsable(){
+  public int countUsable() {
     int usable = 0;
-    for (Sharpie sharpie : sharpieList){
-      if (sharpie.inkAmount != 0){
+    for (Sharpie sharpie : sharpieList) {
+      if (sharpie.inkAmount != 0) {
         usable++;
       }
     }
     return usable;
   }
 
-  public void removeTrash(){
-    for (int i = 0; i <sharpieList.size(); i++) {
-      if (sharpieList.get(i).inkAmount == 0){
+  public void removeTrash() {
+    for (int i = 0; i < sharpieList.size(); i++) {
+      if (sharpieList.get(i).inkAmount == 0) {
         sharpieList.remove(i);
         i--;
       }

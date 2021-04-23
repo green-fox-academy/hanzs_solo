@@ -18,7 +18,7 @@ public class CopyFile {
     String sourcePathAsString = "src/Basics.FileIO/CopyFile/duplicated-chars.txt";
     String targetPathAsString = "src/Basics.FileIO/CopyFile/target.txt";
 
-    boolean isSuccessful = copyContent(sourcePathAsString,targetPathAsString);
+    boolean isSuccessful = copyContent(sourcePathAsString, targetPathAsString);
 
     //test
     System.out.println(isSuccessful);
@@ -37,7 +37,7 @@ public class CopyFile {
       return false;
     }
     try {
-      Files.write(targetPath,content, StandardCharsets.UTF_8);
+      Files.write(targetPath, content, StandardCharsets.UTF_8);
     } catch (IOException e) {
       return false;
     }

@@ -28,7 +28,7 @@ public class Armada {
         index1++;
       }
     }
-    return index1 == armada.size()-1;
+    return index1 == armada.size() - 1;
   }
 
   public List<Ship> getArmada() {

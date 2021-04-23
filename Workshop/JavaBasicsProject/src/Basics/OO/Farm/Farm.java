@@ -25,7 +25,7 @@ public class Farm {
     int leastHunger = 0;
     int leastHungryIndex = 0;
     for (int i = 0; i < animalList.size(); i++) {
-      if (animalList.get(i).getHunger() > leastHunger){
+      if (animalList.get(i).getHunger() > leastHunger) {
         leastHunger = animalList.get(1).getHunger();
         leastHungryIndex = i;
       }

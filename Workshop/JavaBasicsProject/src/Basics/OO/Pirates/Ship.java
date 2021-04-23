@@ -29,7 +29,7 @@ public class Ship {
 
   public void fillShip() {
     captain = new Pirate();
-    int numberOfRecruits = random.nextInt(shipCapacity-1)+1;
+    int numberOfRecruits = random.nextInt(shipCapacity - 1) + 1;
     for (int i = 0; i < numberOfRecruits; i++) {
       crew.add(new Pirate());
     }
