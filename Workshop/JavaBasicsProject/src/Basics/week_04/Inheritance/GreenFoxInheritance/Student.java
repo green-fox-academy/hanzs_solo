@@ -1,29 +1,30 @@
 package Basics.week_04.Inheritance.GreenFoxInheritance;
-//Student
-//
-//    Create a Student class that has the same fields and methods as the Person class, and has the following additional
-//
-//    fields:
-//    previousOrganization: the name of the student’s previous company / school
-//    skippedDays: the number of days skipped from the course
-//
-//    methods:
-//    getGoal(): prints "Be a junior software developer."
-//    introduce(): prints "Hi, I'm name, a age year old gender from previousOrganization who skipped skippedDays days from the course already."
-//    skipDays(numberOfDays): increases skippedDays by numberOfDays
-//
-//    The Student class has the following constructors:
-//
-//    Student(name, age, gender, previousOrganization): beside the given parameters, it sets skippedDays to 0
-//    Student(): sets name to Jane Doe, age to 30, gender to female, previousOrganization to The School of Life, skippedDays to 0
 
-//
-//Class
+/**
+ * Student
+ * <p>
+ * Create a Student class that has the same fields and methods as the Person class, and has the following additional
+ * <p>
+ * fields:
+ * previousOrganization: the name of the student’s previous company / school
+ * skippedDays: the number of days skipped from the course
+ * <p>
+ * methods:
+ * getGoal(): prints "Be a junior software developer."
+ * introduce(): prints "Hi, I'm name, a age year old gender from previousOrganization who skipped skippedDays days from the course already."
+ * skipDays(numberOfDays): increases skippedDays by numberOfDays
+ * <p>
+ * The Student class has the following constructors:
+ * <p>
+ * Student(name, age, gender, previousOrganization): beside the given parameters, it sets skippedDays to 0
+ * Student(): sets name to Jane Doe, age to 30, gender to female, previousOrganization to The School of Life, skippedDays to 0
+ */
+
 //subclass of Person
 public class Student extends Person {
   //
   //fields
-  private String previousOrganization;
+  private final String previousOrganization;
   private int skippedDays;
 
   //
@@ -58,7 +59,7 @@ public class Student extends Person {
   public void setSkippedDays(int skippedDays) {
     if (skippedDays >= 0) {
       this.skippedDays = skippedDays;
-    }else {
+    } else {
       throw new IllegalArgumentException("skippedDays can't be a negative number");
     }
   }

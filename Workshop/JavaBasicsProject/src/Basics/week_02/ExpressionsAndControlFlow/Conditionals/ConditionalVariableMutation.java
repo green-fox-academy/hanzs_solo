@@ -25,9 +25,8 @@ public class ConditionalVariableMutation {
       }
     // if more than 20 set out2 to "More!"
       if (20 < b) {
-          ;
+          output2 = "More";
       }
-    output2 = "More!";
 
     System.out.println(output2);
 

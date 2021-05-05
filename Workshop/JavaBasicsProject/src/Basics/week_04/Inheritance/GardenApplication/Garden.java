@@ -1,13 +1,14 @@
 package Basics.week_04.Inheritance.GardenApplication;
 
-//The Garden
-//    is able to hold unlimited amount of flowers and trees
-//    when watering it should only water those plants that need water with equally divided amount amongst them
-//    eg. watering with 40 and 4 of them need water then each gets watered with 10
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Garden
+ * is able to hold unlimited amount of flowers and trees
+ * when watering it should only water those plants that need water with equally divided amount amongst them
+ * eg. watering with 40 and 4 of them need water then each gets watered with 10
+ */
 public class Garden {
   //
   //fields

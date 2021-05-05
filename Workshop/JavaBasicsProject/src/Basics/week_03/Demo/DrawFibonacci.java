@@ -7,8 +7,9 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import valami.Class01;
 
-public class DrawFibonacci {
+public class DrawFibonacci{
   static int multiplier = 1;
 
   public static void drawImage(Graphics graphics) {

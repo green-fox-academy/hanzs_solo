@@ -17,39 +17,17 @@ public class DrawSquare {
     //
     // The square should have as many lines as the number was
 
-    //coulomb
 
-    int a, row, column;
-    Scanner input = new Scanner(System.in);
-
-    System.out.println("Lets draw a square!");
-    System.out.println("a: ");
-    a = input.nextInt();
-
-    row = 1;
-    while (row <= a) {
-      if (row == 1 || row == a) {
-        column = 1;
-        while (column <= a) {
-          System.out.print("%");
-          column++;
+    int n = 10;
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++) {
+        if (i == 0 || i == n - 1 || j == 0 || j == n - 1) {
+          System.out.print(" % ");
+        } else {
+          System.out.print("   ");
         }
-        System.out.println("");
-      } else {
-        column = 1;
-        System.out.print("%");
-        while (column <= a - 2) {
-          System.out.print(" ");
-          column++;
-        }
-        System.out.println("%");
-
       }
-      row++;
+      System.out.println();
     }
-    System.out.println("");
-    System.out.println("what?");
-
   }
-
 }

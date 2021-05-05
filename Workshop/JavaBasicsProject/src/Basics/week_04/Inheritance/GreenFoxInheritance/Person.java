@@ -1,29 +1,28 @@
 package Basics.week_04.Inheritance.GreenFoxInheritance;
 
-//    Create a Person class with the following fields:
-//
-//    name: the name of the person
-//    age: the age of the person (whole number)
-//    gender: the gender of the person (male / female)
+/**
+ * Create a Person class with the following fields:
+ * <p>
+ * name: the name of the person
+ * age: the age of the person (whole number)
+ * gender: the gender of the person (male / female)
+ * <p>
+ * And the following methods:
+ * <p>
+ * getGoal(): prints "My goal is: Live for the moment!"
+ * introduce(): prints "Hi, I'm name, a age year old gender."
+ * <p>
+ * And the following constructors:
+ * <p>
+ * Person(name, age, gender)
+ * Person(): sets name to Jane Doe, age to 30, gender to female
+ */
 
-//    And the following methods:
-//
-//    getGoal(): prints "My goal is: Live for the moment!"
-//    introduce(): prints "Hi, I'm name, a age year old gender."
-
-//    And the following constructors:
-//
-//    Person(name, age, gender)
-//    Person(): sets name to Jane Doe, age to 30, gender to female
-
-
-//
-//Class
 //superclass
 public class Person {
   //
   //fields
-  private String name;
+  private final String name;
   private int age;
   private String gender;
 

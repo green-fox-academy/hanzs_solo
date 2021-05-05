@@ -1,12 +1,10 @@
 package Basics.week_04.Inheritance.GardenApplication;
 
-//
-//Class
+
 //superclass
 public class Plant {
   //
   //fields
-  //private String plantType;
   private String plantType;
   private String color;
   private int minWater;
@@ -30,7 +28,7 @@ public class Plant {
     if (isThirsty) {
       System.out.println("The " + color + " " + plantType + " needs water.");
     } else {
-      System.out.println("The " + color + " Flower doesn't need water.");
+      System.out.println("The " + color + " " + plantType + " doesn't need water.");
     }
   }
 

@@ -20,7 +20,7 @@ Collections.sort(dominoes);
 // the order of your dominoes should look like this: [[1,5], [2,4], [4,6], [5,2], [6,7], [7,1]]
 
 
--Make your Todo class implement Comparable
--It should compare the completed field first
--Then the description
--Or if you haven't got a separate Todo class, or it doesn't contain fields like description and completed, use your Thing class
+    -Make your Todo class implement Comparable
+    -It should compare the completed field first
+    -Then the description
+    -Or if you haven't got a separate Todo class, or it doesn't contain fields like description and completed, use your Thing class

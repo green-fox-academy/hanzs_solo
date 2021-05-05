@@ -12,15 +12,15 @@ public class CodingHours {
     // Print the percentage of the coding hours in the semester if the average
     // work hours weekly is 52
 
-    int semLenght, workdays, hoursPerDay, hoursTotal, average, myAverage;
+    int semLength, workdays, hoursPerDay, hoursTotal, average, myAverage;
     float percentage;
 
-    semLenght = 17;
+    semLength = 17;
     workdays = 5;
     hoursPerDay = 8;
     average = 52;
     myAverage = hoursPerDay * workdays;
-    hoursTotal = semLenght * myAverage;
+    hoursTotal = semLength * myAverage;
     percentage = (float) myAverage / average * 100;
 
     System.out.println("I'm coding about " + myAverage + "hours a week, " +

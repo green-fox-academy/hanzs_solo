@@ -1,20 +1,23 @@
 package Basics.week_04.Inheritance.GreenFoxInheritance;
-//Mentor
-//
-//    Create a Mentor class that has the same fields and methods as the Person class, and has the following additional
-//
-//    fields:
-//    level: the level of the mentor (junior / intermediate / senior)
-//
-//    methods:
-//    getGoal(): prints "Educate brilliant junior software developers."
-//    introduce(): prints "Hi, I'm name, a age year old gender level mentor."
-//
-//    The Mentor class has the following constructors:
-//
-//    Mentor(name, age, gender, level)
-//    Mentor(): sets name to Jane Doe, age to 30, gender to female, level to intermediate
 
+
+/**
+ * Mentor
+ * <p>
+ * Create a Mentor class that has the same fields and methods as the Person class, and has the following additional
+ * <p>
+ * fields:
+ * level: the level of the mentor (junior / intermediate / senior)
+ * <p>
+ * methods:
+ * getGoal(): prints "Educate brilliant junior software developers."
+ * introduce(): prints "Hi, I'm name, a age year old gender level mentor."
+ * <p>
+ * The Mentor class has the following constructors:
+ * <p>
+ * Mentor(name, age, gender, level)
+ * Mentor(): sets name to Jane Doe, age to 30, gender to female, level to intermediate
+ */
 //
 //Class
 //subclass of Person
@@ -48,14 +51,14 @@ public class Mentor extends Person {
             " " + this.level + " mentor.");
   }
 
-
   //
   //getters and setters
   private void setLevel(String level) {
     if (level.equals("junior") || level.equals("intermediate") || level.equals("senior")) {
       this.level = level;
-    } else{
-      throw new IllegalArgumentException("You must choose between \"junior\", \"intermediate\" and \"senior\"!");
+    } else {
+      throw new IllegalArgumentException(
+          "You must choose between \"junior\", \"intermediate\" and \"senior\"!");
     }
   }
 }

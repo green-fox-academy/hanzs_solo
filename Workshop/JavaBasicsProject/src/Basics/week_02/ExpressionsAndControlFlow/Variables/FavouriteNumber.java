@@ -8,6 +8,6 @@ public class FavouriteNumber {
     // And print it like this: "My favorite number is: 8"
 
     int favNum = 5;
-    System.out.println(favNum);
+    System.out.println("My favorite number is: " +favNum);
   }
 }

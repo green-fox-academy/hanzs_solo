@@ -1,19 +1,26 @@
 package Basics.week_04.Inheritance.AircraftCarrier;
 
-//    F35
-//    Max ammo: 12
-//    Base damage: 50
 
-//
-//Class
+/**
+ * F35
+ * Max ammo: 12
+ * Base damage: 50
+ */
 //subclass of Aircraft
 public class F35 extends Aircraft {
   //
-  //constructor
+  //fields
+
+  //
+  //constructors
   public F35() {
-    setType("F35");
-    setMaxAmmo(12);
-    setBaseDamage(50);
-    setPriority(true);
+    super("F35", 12, 50, true);
   }
+
+  //
+  //methods
+
+  //
+  //getters and setters
+
 }

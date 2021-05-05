@@ -1,8 +1,6 @@
 package Basics.week_04.Inheritance.GreenFoxInheritance;
-
 import java.util.ArrayList;
 
-//
 public class Test {
   public static void main(String[] args) {
     ArrayList<Person> people = new ArrayList<>();
@@ -34,7 +32,7 @@ public class Test {
       sponsor.hire();
     }
 
-    for(Person person : people) {
+    for (Person person : people) {
       person.introduce();
       person.getGoal();
     }

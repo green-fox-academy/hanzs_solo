@@ -35,6 +35,7 @@ public class Births {
       e.printStackTrace();
     }
 
+
     List<String[]> separatedContent = new ArrayList<>();
     for (String line : content) {
       separatedContent.add(line.split(";"));
