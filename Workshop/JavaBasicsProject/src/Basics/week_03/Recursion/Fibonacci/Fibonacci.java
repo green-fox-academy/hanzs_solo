@@ -11,12 +11,10 @@ public class Fibonacci {
   // with n=0 representing the start of the sequence.
 
   public static void main(String[] args) {
-    int n = 1;
 
-    for (int i = 1; i <= 10; i++) {
-      System.out.println(getNthFibonacci(i - 1)*10);
-    }
-    //System.out.println(getNthFibonacci(n - 1)*11);
+    int n = 1;
+    System.out.println(getNthFibonacci(n));
+
   }
 
   private static int getNthFibonacci(int n) {
