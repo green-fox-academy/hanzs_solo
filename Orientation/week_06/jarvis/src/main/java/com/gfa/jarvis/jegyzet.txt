@@ -1,0 +1,10 @@
+1.) Thymeleaf
+a thymeleaf templatek maguk a html file-ok a templates mappán belül
+(a css és a JavaScript kódok a static mappába mennek)
+amiket meghívsz a java kódodból (egy annotation segítségével)
+(meghívsz egy kódot(mint egy metódust) csak az másik nyelven van írva)
+
+a thymeleaf expression-ök gyakorlatilag maguk a változó(k?) és a ciklus(ok?)
+
+és ezek a thymeleaf expession-ök gyakorlatilag htmlkódot gyártanak és
+felülírják ezt a html kód részt a gyártottal

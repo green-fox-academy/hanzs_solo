@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <th>name</th>
+    <th>balance</th>
+    <th>animal type</th>
+
+    <tr th:each="account : ${accounts}">
+        <td th:text="${account.name}"/>
+        <td th:text="${account.balance}"/>
+        <td th:text="${account.animalType}"/>
+        <td>
+            <form th:action="@{'/delete/' + ${account.index}}" method="get">
+                <input type="submit" value="hack" />
+            </form>
+        </td>
+    </tr>
+</table>
+<br>
+
+<form action="/delete" method="post">
+    <button type="submit">add</button>
+<!--        &lt;!&ndash;                            <input type="button" value="hack" id="hack_id" th:text="${account.index}"/>&ndash;&gt;-->
+<!--        <button type="submit">hack</button>-->
+</form>
+
+<legend>create new account:</legend>
+<form action="/add" method="post">
+    <input type="text" name="name" placeholder="owner name"> <br>
+    <input type="number" name="balance" min="0" placeholder="balance"> <br>
+    <input type="text" name="animalType" placeholder="animal type"> <br>
+    <button type="submit">add</button>
+</form>
+
+<h5 th:text="${balance}"></h5>
+</body>
+</html>
