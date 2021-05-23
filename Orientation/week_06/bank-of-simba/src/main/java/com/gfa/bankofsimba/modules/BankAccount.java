@@ -17,6 +17,13 @@ public class BankAccount {
     this.animalType = animalType;
   }
 
+  public String worthHacking(){
+    if (balance >= 2000){
+      return "gold";
+    }
+    return "grey";
+  }
+
   @Override
   public String toString() {
     return "|index: " + index + "|name: " + name

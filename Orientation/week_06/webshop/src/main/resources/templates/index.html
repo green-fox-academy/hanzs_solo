@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../static/styles.css">
+
+</head>
+<body>
+<form class="navbar">
+  <input type="submit" formaction="/reset" value="HOME"/>
+<!--  <input type="submit" formaction="/reset" value="SHOW CART"/>-->
+  <input type="submit" formaction="/adminmode" value="ADMIN MODE"/>
+</form>
+<br>
+<form >
+  <input name="search" type="search" placeholder="search something..">
+  <label for="indes">search in description</label>
+  <input type="checkbox" name="inDescription" id="indes">
+  <br>
+  <label for="sort">sort by: </label>
+  <select name="shortBy" id="sort">
+    <option value="price" >cheap</option>
+    <option value="name" >name</option>
+    <option value="quantity" >quantity</option>
+  </select>
+  <label for="des">descending</label>
+  <input type="checkbox" name="descending" id="des">
+  <br>
+  <label for="box">show only available</label>
+  <input type="checkbox" name="availableOnly" id="box">
+  <br>
+  <input type="submit" formaction="/sort" value="filter">
+  <input type="submit" formaction="/reset" value="reset filters">
+</form>
+<br>
+<table>
+  <th>name</th>
+  <th>description</th>
+  <th>price</th>
+  <th>stock</th>
+  <tr th:each="item : ${items}">
+    <td th:text="${item.name}"></td>
+    <td th:text="${item.description}"></td>
+    <td th:text="${item.price}"></td>
+    <td th:text="${item.stock}"></td>
+    <td>
+      <form th:action="@{'/buy/' + ${item.id}}" method="get">
+        <input type="submit" value="add to cart"/>
+      </form>
+    </td>
+  </tr>
+</table>
+<h4 th:text="'your balance: ' + ${wallet}"></h4>
+<!--<table>-->
+<!--  <th>name</th>-->
+<!--  <th>description</th>-->
+<!--  <th>price</th>-->
+<!--  <th>stock</th>-->
+<!--  <tr th:each="asd : ${cart}">-->
+<!--    <td th:text="${asd.name}"></td>-->
+<!--    <td th:text="${asd.description}"></td>-->
+<!--    <td th:text="${asd.price}"></td>-->
+<!--    <td th:text="${asd.stock}"></td>-->
+<!--    <td>-->
+<!--      <form th:action="@{'/buy/' + ${asd.id}}" method="get">-->
+<!--        <input type="submit" value="add to cart"/>-->
+<!--      </form>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--</table>-->
+</body>
+</html>
