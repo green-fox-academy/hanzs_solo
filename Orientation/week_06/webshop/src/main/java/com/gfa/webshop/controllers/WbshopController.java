@@ -1,11 +1,14 @@
 package com.gfa.webshop.controllers;
 
 import com.gfa.webshop.models.Item;
+import com.gfa.webshop.services.WebshopService;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import javax.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class MainController {
+public class WbshopController {
 
   List<Item> initialItems = new ArrayList<>();
   List<Item> items = initialItems;
@@ -22,11 +25,17 @@ public class MainController {
   List<Item> filtered = initialItems;
   int wallet = 3500;
 
-  public MainController() {
+  WebshopService webshopService;
+
+
+  @Autowired
+  public WbshopController(WebshopService webshopService) {
     initialItems.add(new Item("bread", "delicious white bread", 1, 12));
     initialItems.add(new Item("nike shoes", "colorful nike shoes", 100, 5));
     initialItems.add(new Item("coffee beans", "right from noth Africa", 30, 4));
     initialItems.add(new Item("cocaine", "100% columbian cocaine", 100, 14));
+
+    this.webshopService = webshopService;
   }
 
   @GetMapping("/")
@@ -50,16 +59,22 @@ public class MainController {
 
   @GetMapping("/sort")
   public String sort(
+      HttpServletRequest request,
       @RequestParam String search,
       @RequestParam String shortBy,
       @RequestParam(defaultValue = "False") Boolean inDescription,
       @RequestParam(defaultValue = "False") Boolean descending,
       @RequestParam(defaultValue = "False") Boolean availableOnly) {
 
-    Comparator<Item> c = Comparator.comparingInt(Item::getPrice);
-    Predicate<Item> p = x -> true;
-    Predicate<Item> s = x -> x.getName().contains(search);
+    webshopService.log(request.getRemoteAddr() + " searched for: "+search);
 
+    Predicate<Item> s = x -> x.getName().contains(search);
+    if (inDescription) {
+      s = x -> x.getName().contains(search) || x.getDescription().contains(search);
+      ;
+    }
+
+    Comparator<Item> c = Comparator.comparingInt(Item::getPrice);
     switch (shortBy) {
       case "price":
         c = Comparator.comparingInt(Item::getPrice);
@@ -70,14 +85,12 @@ public class MainController {
       case "quantity":
         c = Comparator.comparingInt(Item::getStock);
     }
-    if (inDescription) {
-      s = x -> x.getName().contains(search) || x.getDescription().contains(search);
-      ;
-    }
 
     if (descending) {
       c = c.reversed();
     }
+
+    Predicate<Item> p = x -> true;
     if (availableOnly) {
       p = x -> x.getStock() != 0;
     }
@@ -95,19 +108,19 @@ public class MainController {
   public String buy(@PathVariable int index) {
     for (Item item : items) {
       if (item.getId() == index && item.getStock() > 0) {
-        boolean shouldAdd = true;
-        for (Item asd : cart) {
-          if (asd.getId() == index) {
-            asd.setId(asd.getId() + 1);
-            shouldAdd = false;
-          }
-        }
-        if (shouldAdd) {
-          cart.add(new Item(item.getName(), item.getDescription(),
-                  item.getPrice(), item.getStock()));
-          cart.get(cart.size() - 1).setStock(1);
-          cart.get(cart.size() - 1).setId(index );
-        }
+//        boolean shouldAdd = true;
+//        for (Item asd : cart) {
+//          if (asd.getId() == index) {
+//            asd.setId(asd.getId() + 1);
+//            shouldAdd = false;
+//          }
+//        }
+//        if (shouldAdd) {
+//          cart.add(new Item(item.getName(), item.getDescription(),
+//                  item.getPrice(), item.getStock()));
+//          cart.get(cart.size() - 1).setStock(1);
+//          cart.get(cart.size() - 1).setId(index );
+//        }
         item.setStock(item.getStock() - 1);
         wallet -= item.getPrice();
       }
@@ -122,7 +135,7 @@ public class MainController {
 
   @GetMapping("/verify")
   public String verify(@RequestParam String password, Model model) {
-    System.out.println(password);
+    webshopService.log("somebody tryed to access acmin mode with password: "+password);
     if (!password.equals("admin")) {
       return "access-denied";
     }

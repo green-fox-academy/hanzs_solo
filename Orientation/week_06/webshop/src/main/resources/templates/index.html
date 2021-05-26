@@ -24,7 +24,7 @@
     <option value="name" >name</option>
     <option value="quantity" >quantity</option>
   </select>
-  <label for="des">descending</label>
+  <label for="des" >descending</label>
   <input type="checkbox" name="descending" id="des">
   <br>
   <label for="box">show only available</label>
@@ -46,7 +46,7 @@
     <td th:text="${item.stock}"></td>
     <td>
       <form th:action="@{'/buy/' + ${item.id}}" method="get">
-        <input type="submit" value="add to cart"/>
+        <input type="submit" value="buy"/>
       </form>
     </td>
   </tr>

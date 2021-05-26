@@ -20,11 +20,15 @@ public class Main {
     Aircraft f16_04 = new F16();
     Aircraft f35_03 = new F35();
     Aircraft f35_04 = new F35();
+
+
+
     catobar.add(f16_02);
     catobar.add(f16_03);
     catobar.add(f16_04);
     catobar.add(f35_03);
     catobar.add(f35_04);
+
     catobar.fill();
 
     System.out.println(stobar.getStatus());

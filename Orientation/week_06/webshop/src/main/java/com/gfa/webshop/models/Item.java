@@ -1,7 +1,7 @@
 package com.gfa.webshop.models;
 
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
+
 
 public class Item {
 
@@ -23,8 +23,8 @@ public class Item {
 
   @Override
   public String toString() {
-    return "name: " + name + "description: " + description + "price: " + "stock: " + stock + "id: "
-        + id;
+    return "name: " + name + "description: " + description
+        + "price: " + price + "stock: " + stock + "id: " + id;
   }
 
   public int getId() {
