@@ -15,7 +15,14 @@
   <tr th:each="item : ${items}">
     <form action="/modify" method="post">
       <td>
-        <input type="text" name="name" th:value="${item.name}">
+        <p th:text="'#'+${item.id}"></p>
+
+      </td>
+
+      <input type="number" name="id" th:value="${item.id}" hidden>
+
+      <td>
+        <input type="text" name="name" th:value="${item.name}  ">
       </td>
       <td>
         <input type="text" name="description" th:value="${item.description}">
@@ -27,9 +34,6 @@
         <input type="number" name="stock" th:value="${item.stock}">
       </td>
       <td>
-        <input type="number" name="id" th:value="${item.id}" hidden>
-      </td>
-      <td>
         <input type="submit" value="save"/>
       </td>
     </form>
@@ -37,7 +41,6 @@
 </table>
 <form>
   <button formaction="/webshop">return to webshop</button>
-
 </form>
 </body>
 </html>

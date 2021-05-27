@@ -9,26 +9,25 @@
 <body>
 <form class="navbar">
   <input type="submit" formaction="/reset" value="HOME"/>
-<!--  <input type="submit" formaction="/reset" value="SHOW CART"/>-->
   <input type="submit" formaction="/adminmode" value="ADMIN MODE"/>
 </form>
 <br>
 <form >
-  <input name="search" type="search" placeholder="search something..">
+  <input name="search" type="search" th:value="${lastFilterQuery.search}" placeholder="search something..">
   <label for="indes">search in description</label>
-  <input type="checkbox" name="inDescription" id="indes">
+  <input type="checkbox" name="inDescription" id="indes" th:checked="${lastFilterQuery.inDescription == true}">
   <br>
   <label for="sort">sort by: </label>
   <select name="shortBy" id="sort">
-    <option value="price" >cheap</option>
-    <option value="name" >name</option>
-    <option value="quantity" >quantity</option>
+    <option value="price" th:selected="${lastFilterQuery.getShortBy()} == 'price'" >price</option>
+    <option value="name" th:selected="${lastFilterQuery.getShortBy()} == 'name'" >name</option>
+    <option value="quantity" th:selected="${lastFilterQuery.getShortBy()} == 'quantity'" >quantity</option>
   </select>
-  <label for="des" >descending</label>
-  <input type="checkbox" name="descending" id="des">
+  <label for="des">descending</label>
+  <input type="checkbox" name="isDescending" id="des"th:checked="${lastFilterQuery.isDescending == true}">
   <br>
   <label for="box">show only available</label>
-  <input type="checkbox" name="availableOnly" id="box">
+  <input type="checkbox" name="availableOnly" id="box"th:checked="${lastFilterQuery.availableOnly == true}">
   <br>
   <input type="submit" formaction="/sort" value="filter">
   <input type="submit" formaction="/reset" value="reset filters">
@@ -52,22 +51,5 @@
   </tr>
 </table>
 <h4 th:text="'your balance: ' + ${wallet}"></h4>
-<!--<table>-->
-<!--  <th>name</th>-->
-<!--  <th>description</th>-->
-<!--  <th>price</th>-->
-<!--  <th>stock</th>-->
-<!--  <tr th:each="asd : ${cart}">-->
-<!--    <td th:text="${asd.name}"></td>-->
-<!--    <td th:text="${asd.description}"></td>-->
-<!--    <td th:text="${asd.price}"></td>-->
-<!--    <td th:text="${asd.stock}"></td>-->
-<!--    <td>-->
-<!--      <form th:action="@{'/buy/' + ${asd.id}}" method="get">-->
-<!--        <input type="submit" value="add to cart"/>-->
-<!--      </form>-->
-<!--    </td>-->
-<!--  </tr>-->
-<!--</table>-->
 </body>
 </html>
