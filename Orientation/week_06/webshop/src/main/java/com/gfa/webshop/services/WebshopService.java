@@ -1,6 +1,5 @@
 package com.gfa.webshop.services;
 
-import java.io.File;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
@@ -35,29 +34,37 @@ public class WebshopService {
     this.webshopRepository = webshopRepository;
   }
 
-  public List<Item> forwardItemsInitial(){
+  public List<Item> forwardItemsInitial() {
     return webshopRepository.getItemsInitial();
   }
 
-  public List<Item> forwardItemsFiltered(){
+  public List<Item> forwardItemsFiltered() {
     return webshopRepository.getItemsFiltered();
   }
 
-  public long forwardBalance(){
+  public long forwardBalance() {
     return webshopRepository.getBalance();
   }
 
-  public  Item forwardItemById(int id){
-    for(Item item : webshopRepository.getItemsInitial()){
-      if (item.getId() == id){
+  public Item forwardItemById(int id) {
+    for (Item item : webshopRepository.getItemsInitial()) {
+      if (item.getId() == id) {
         return item;
       }
     }
     return null;
   }
 
-  public Item forwardEmptyItem(){
-    return webshopRepository.getEmptyItem();
+//  public Item forwardEmptyItem(){
+//    return webshopRepository.getItemEmpty();
+//  }
+
+  public Item forwardAutoFillItem() {
+    return webshopRepository.getItemAutoFill();
+  }
+
+  public void setItemAutofill(Item item) {
+    webshopRepository.setItemAutoFill(item);
   }
 
   public void filterLogic(FilterQueryHolder filterQueryHolder) {
@@ -128,17 +135,33 @@ public class WebshopService {
   public String verifyPassService(HttpServletRequest request, String password) {
     if (!password.equals("admin")) {
       log(request.getRemoteAddr()
-              + " tried to access admin mode with password: " + password
-              + "  **ACCESS DENIED**"
-          );
+          + " tried to access admin mode with password: " + password
+          + "  **ACCESS DENIED**"
+      );
       return "access-denied";
     } else {
       log(request.getRemoteAddr()
-              + " tried to access admin mode with password: " + password
-              + "  **ACCESS GRANTED**"
-          );
+          + " tried to access admin mode with password: " + password
+          + "  **ACCESS GRANTED**"
+      );
     }
-    return "modify";
+    resetFiltersService();
+    return "redirect:/admin-mode";
+  }
+
+
+  public void autoFillService(Integer id) {
+    if (id == null) {
+      webshopRepository.setItemAutoFill(null);
+      return;
+    }
+    for (Item item : webshopRepository.getItemsInitial()) {
+      if (item.getId() == id) {
+        webshopRepository.setItemAutoFill(item);
+        return;
+      }
+    }
+    webshopRepository.setItemAutoFill(null);
   }
 
   public void modifyService(Item newItem) {
@@ -152,12 +175,42 @@ public class WebshopService {
     }
   }
 
+  public void removeService(int id) {
+    List<Item> newInitialList = webshopRepository.getItemsInitial();
+
+    List<Item> newFilteredList = webshopRepository.getItemsInitial();
+    for (int i = 0; i < newFilteredList.size(); i++) {
+      if (newFilteredList.get(i).getId() == id) {
+        newFilteredList.remove(i);
+        webshopRepository.setItemsFiltered(newFilteredList);
+        return;
+      }
+    }
+
+    for (int i = 0; i < newInitialList.size(); i++) {
+      if (newInitialList.get(i).getId() == id) {
+        newInitialList.remove(i);
+        webshopRepository.setItemsInitial(newInitialList);
+        return;
+      }
+    }
+  }
+
+
+  public void addService(Item newItem) {
+
+    List<Item> newList = webshopRepository.getItemsInitial();
+    newList.add(new Item(newItem.getName(), newItem.getDescription(), newItem.getPrice(),
+        newItem.getStock()));
+    webshopRepository.setItemsInitial(newList);
+  }
+
   public void log(String log) {
     LocalDateTime now = LocalDateTime.now();
     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     DateTimeFormatter dateTimeFormatterForPath = DateTimeFormatter.ofPattern("yyyy.MM.dd.");
     Path logPath = Paths.get(
-        "src/main/java/com/gfa/webshop/logs/logs_"+dateTimeFormatterForPath.format(now)+"txt");
+        "src/main/java/com/gfa/webshop/logs/logs_" + dateTimeFormatterForPath.format(now) + "txt");
 
     log = dateTimeFormatter.format(now) + " | " + log;
     tryToLog(log, logPath);
@@ -167,7 +220,7 @@ public class WebshopService {
   private void tryToLog(String log, Path logPath) {
     System.out.println(log);
     logList.set(0, log);
-    if(!Files.exists(logPath)){
+    if (!Files.exists(logPath)) {
       try {
         Files.createFile(logPath);
       } catch (IOException e) {

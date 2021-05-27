@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<table class="admin-mode-nav-bar">
+  <tr>
+    <td>
+      <form>
+        <button formaction="/webshop">return to webshop</button>
+      </form>
+    </td>
+  </tr>
+</table>
+<table class="admin-mode-main-table">
+  <tr>
+    <td>
+      <h4>add new item</h4>
+    </td>
+    <td>
+      <h4>modify item</h4>
+    </td>
+  </tr>
+  <tr>
+    <td class="mod-section">
+      <form action="/add" method="post">
+        <label>name</label>
+        <input type="text" name="name" placeholder="name">
+        <br>
+        <label>description</label>
+        <input type="text" name="description" placeholder="description">
+        <br>
+        <label>price</label>
+        <input type="number" name="price" placeholder="price">
+        <br>
+        <label>stock</label>
+        <input type="number" name="stock" placeholder="stock">
+        <br>
+        <input type="submit" value="add"/>
+      </form>
+    </td>
+    <td class="mod-section">
+      <form action="/modify" method="post">
+        <label>id</label>
+        <input type="number" th:value="${item?.id}" name="autoFillId"
+               placeholder="search item by id">
+        <br>
+        <input width="auto" type="submit" value="autofill with old values" formaction="/autofill"
+               formmethod="get"/>
+        <br>
+        <input type="number" name="id" th:value="${item?.id}" hidden>
+        <br>
+        <label>name</label>
+        <input type="text" name="name" th:value="${item?.name}" placeholder="new name">
+        <br>
+        <label>description</label>
+        <input type="text" name="description" th:value="${item?.description}"
+               placeholder="new description">
+        <br>
+        <label>price</label>
+        <input type="number" name="price" th:value="${item?.price}" placeholder="new price">
+        <br>
+        <label>stock</label>
+        <input type="number" name="stock" th:value="${item?.stock}" placeholder="new amount">
+        <br>
+        <input type="submit" value="modify">
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <h3>current items</h3>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <form>
+        <input name="search" type="search" th:value="${lastFilterQuery.search}"
+               placeholder="search something..">
+        <label for="indes">search in description</label>
+        <input type="checkbox" name="inDescription" id="indes"
+               th:checked="${lastFilterQuery.inDescription == true}">
+        <br>
+        <label for="sort">sort by: </label>
+        <select name="shortBy" id="sort">
+          <option value="price" th:selected="${lastFilterQuery.getShortBy()} == 'price'">price
+          </option>
+          <option value="name" th:selected="${lastFilterQuery.getShortBy()} == 'name'">name</option>
+          <option value="quantity" th:selected="${lastFilterQuery.getShortBy()} == 'quantity'">
+            quantity
+          </option>
+        </select>
+        <label for="des">descending</label>
+        <input type="checkbox" name="isDescending" id="des"
+               th:checked="${lastFilterQuery.isDescending == true}">
+        <br>
+        <label for="box">show only available</label>
+        <input type="checkbox" name="availableOnly" id="box"
+               th:checked="${lastFilterQuery.availableOnly == true}">
+        <br>
+        <input type="text" name="redirectPath" value="admin-mode" hidden>
+        <input type="submit" formaction="filter-results" value="filter">
+        <input type="submit" formaction="reset-filters" value="reset filters">
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <table class="exclude-table">
+        <th>id</th>
+        <th>name</th>
+        <th>description</th>
+        <th>price</th>
+        <th>stock</th>
+        <tr th:each="item : ${items}">
+          <td th:text="'#'+${item.id}"></td>
+          <td th:text="${item.name}"></td>
+          <td th:text="${item.description}"></td>
+          <td th:text="${item.price}"></td>
+          <td th:text="${item.stock}"></td>
+          <td class="mod-buttons">
+            <form action="remove" method="get">
+              <input type="number" name="id" th:value="${item.id}" hidden>
+              <input type="submit" value="remove"/>
+            </form>
+          </td>
+          <td class="mod-buttons">
+            <form action="remove" method="get">
+              <input type="number" name="autoFillId" th:value="${item.id}" hidden>
+              <input type="submit" value="modify" formaction="/autofill"
+                     formmethod="get"/>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</body>
+</html>

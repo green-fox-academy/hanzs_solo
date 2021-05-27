@@ -3,13 +3,13 @@ package com.gfa.webshop.repositorys;
 import com.gfa.webshop.models.Item;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class WebshopRepository {
 
-  Item emptyItem;
+//  Item itemEmpty;
+  Item itemAutoFill;
 
   List<Item> itemsInitial = new ArrayList<>();
   List<Item> itemsFiltered;
@@ -18,7 +18,6 @@ public class WebshopRepository {
   long balance;
 
   WebshopRepository(){
-    emptyItem = new Item("","",0,0);
     itemsInitial.add(new Item("bread", "delicious white bread", 1, 12));
     itemsInitial.add(new Item("nike shoes", "colorful nike shoes", 100, 5));
     itemsInitial.add(new Item("coffee beans", "right from noth Africa", 30, 4));
@@ -29,13 +28,14 @@ public class WebshopRepository {
     balance = 2200;
   }
 
-  public Item getEmptyItem() {
-    return emptyItem;
+  public Item getItemAutoFill() {
+    return itemAutoFill;
   }
 
-  public void setEmptyItem(Item emptyItem) {
-    this.emptyItem = emptyItem;
+  public void setItemAutoFill(Item itemAutoFill) {
+    this.itemAutoFill = itemAutoFill;
   }
+
 
   public List<Item> getItemsInitial() {
     return itemsInitial;

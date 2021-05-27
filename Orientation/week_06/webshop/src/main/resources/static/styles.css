@@ -1,0 +1,50 @@
+
+body {
+  font-family: Consolas, monospace;
+}
+
+.admin-mode-nav-bar{
+  margin: 10px auto;
+}
+
+.admin-mode-main-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.admin-mode-main-table tr {
+}
+
+
+.admin-mode-main-table td {
+  padding: 2% 0;
+  border: 3px solid grey;
+}
+
+.admin-mode-main-table h4, .admin-mode-main-table h3 {
+  margin: 0;
+}
+
+.mod-section {
+  vertical-align: bottom;
+  text-align: right;
+}
+
+.mod-section td {
+  padding: 0 10px;
+}
+
+.exclude-table th {
+  text-align: left;
+}
+
+.exclude-table td {
+  border: 0;
+  text-align: left;
+  padding: 0 5px;
+}
+
+.exclude-table .mod-buttons{
+  padding: 0;
+}

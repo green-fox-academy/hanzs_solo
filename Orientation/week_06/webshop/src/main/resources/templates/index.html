@@ -9,7 +9,7 @@
 <body>
 <form class="navbar">
   <input type="submit" formaction="/reset" value="HOME"/>
-  <input type="submit" formaction="/adminmode" value="ADMIN MODE"/>
+  <input type="submit" formaction="/adminmodelogin" value="ADMIN MODE"/>
 </form>
 <br>
 <form >
@@ -29,8 +29,9 @@
   <label for="box">show only available</label>
   <input type="checkbox" name="availableOnly" id="box"th:checked="${lastFilterQuery.availableOnly == true}">
   <br>
-  <input type="submit" formaction="/sort" value="filter">
-  <input type="submit" formaction="/reset" value="reset filters">
+  <input type="text" name="redirectPath" value="webshop" hidden>
+  <input type="submit" formaction="filter-results" value="filter">
+  <input type="submit" formaction="reset-filters" value="reset filters">
 </form>
 <br>
 <table>
