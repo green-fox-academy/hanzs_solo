@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class WebshopRepository {
 
+  Item emptyItem;
+
   List<Item> itemsInitial = new ArrayList<>();
   List<Item> itemsFiltered;
   List<Item> itemsWithoutCart;
@@ -16,6 +18,7 @@ public class WebshopRepository {
   long balance;
 
   WebshopRepository(){
+    emptyItem = new Item("","",0,0);
     itemsInitial.add(new Item("bread", "delicious white bread", 1, 12));
     itemsInitial.add(new Item("nike shoes", "colorful nike shoes", 100, 5));
     itemsInitial.add(new Item("coffee beans", "right from noth Africa", 30, 4));
@@ -24,6 +27,14 @@ public class WebshopRepository {
     this.itemsWithoutCart = itemsInitial;
     this.itemsCart = new ArrayList<>();
     balance = 2200;
+  }
+
+  public Item getEmptyItem() {
+    return emptyItem;
+  }
+
+  public void setEmptyItem(Item emptyItem) {
+    this.emptyItem = emptyItem;
   }
 
   public List<Item> getItemsInitial() {

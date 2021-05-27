@@ -8,35 +8,68 @@
 </head>
 <body>
 <table>
+  <!--  <form action="/autofill" method="get">-->
+  <!--    <tr>-->
+  <!--      <td>-->
+  <!--        <input type="number" name="id" placeholder="enter id">-->
+  <!--      </td>-->
+  <!--      <td>-->
+  <!--        <input width="auto" type="submit" value="autofill" formaction="/autofill"/>-->
+  <!--      </td>-->
+  <!--    </tr>-->
+  <!--  </form>-->
+  <form action="/modify" method="post">
+
+    <tr>
+      <td>
+        <input type="number" name="searcherId" placeholder="enter id">
+      </td>
+      <td>
+        <input width="auto" type="submit" value="autofill" formaction="/autofill" formmethod="get"/>
+      </td>
+    </tr>
+
+    <input type="number" name="id" th:value="${item.id}" hidden>
+    <td>
+      <input type="text" name="name" th:value="${item.name}">
+    </td>
+    <td>
+      <input type="text" name="description" th:value="${item.description}">
+    </td>
+    <td>
+      <input type="number" name="price" th:value="${item.price}">
+    </td>
+    <td>
+      <input type="number" name="stock" th:value="${item.stock}">
+    </td>
+    <td>
+      <input type="submit" value="save"/>
+    </td>
+    </tr>
+  </form>
+</table>
+<table>
+  <th>id</th>
   <th>name</th>
   <th>description</th>
   <th>price</th>
   <th>stock</th>
   <tr th:each="item : ${items}">
-    <form action="/modify" method="post">
-      <td>
-        <p th:text="'#'+${item.id}"></p>
-
-      </td>
-
-      <input type="number" name="id" th:value="${item.id}" hidden>
-
-      <td>
-        <input type="text" name="name" th:value="${item.name}  ">
-      </td>
-      <td>
-        <input type="text" name="description" th:value="${item.description}">
-      </td>
-      <td>
-        <input type="number" name="price" th:value="${item.price}">
-      </td>
-      <td>
-        <input type="number" name="stock" th:value="${item.stock}">
-      </td>
-      <td>
-        <input type="submit" value="save"/>
-      </td>
-    </form>
+    <td>
+      <p th:text="'#'+${item.id}"></p>
+    </td>
+    <td>
+      <p th:text="${item.name}  "></p>
+    </td>
+    <td>
+      <p th:text="${item.description}"></p>
+    </td>
+    <td>
+      <p th:text="${item.price}"></p>
+    </td>
+    <td>
+      <p th:text="${item.stock}"></p>
+    </td>
   </tr>
 </table>
 <form>
@@ -44,3 +77,26 @@
 </form>
 </body>
 </html>
+<!--    <form action="/modify" method="post">-->
+<!--      <td>-->
+<!--        <p th:text="'#'+${item.id}"></p>-->
+
+<!--      <input type="number" name="id" hidden>-->
+<!--      </td>-->
+
+<!--      <td>-->
+<!--        <input type="text" name="name" th:value="${item.name}  ">-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <input type="text" name="description" th:value="${item.description}">-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <input type="number" name="price" th:value="${item.price}">-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <input type="number" name="stock" th:value="${item.stock}">-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <input type="submit" value="save"/>-->
+<!--      </td>-->
+<!--    </form>-->

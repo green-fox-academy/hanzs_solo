@@ -17,12 +17,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class WebshopController {
   WebshopService webshopService;
   FilterQueryHolder lastFilterQuery;
+  Item itemAutoFill;
 
   @Autowired
   public WebshopController(WebshopService webshopService,
       WebshopRepository webshopRepository) {
     this.webshopService = webshopService;
     lastFilterQuery = new FilterQueryHolder("",null,"price",null,null);
+    itemAutoFill = webshopService.forwardEmptyItem();
   }
 
   @GetMapping("/")
@@ -72,14 +74,35 @@ public class WebshopController {
   public String verify(HttpServletRequest request,
       @RequestParam String password, Model model) {
     String redirectTo = webshopService.verifyPassService(request, password);
+    model.addAttribute("item", itemAutoFill);
     model.addAttribute("items", webshopService.forwardItemsInitial());
     return redirectTo;
   }
 
   @PostMapping("/modify")
-  public String modify(Item newItem, Model model) {
+  public String modify(Item newItem) {
+    System.out.println(newItem);
     webshopService.modifyService(newItem);
+    return "redirect:/modify";
+  }
+
+
+  @GetMapping("/modify")
+  public String modify(Model model) {
+    model.addAttribute("item", itemAutoFill);
     model.addAttribute("items",webshopService.forwardItemsInitial());
     return "modify";
   }
+
+
+
+  @GetMapping("/autofill")
+  public String autofill(@RequestParam Integer searcherId){
+    if (searcherId == null){
+      return "redirect:/modify";
+    }
+    itemAutoFill = webshopService.forwardItemById(searcherId);
+    return "redirect:/modify";
+  }
+
 }

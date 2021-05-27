@@ -47,6 +47,18 @@ public class WebshopService {
     return webshopRepository.getBalance();
   }
 
+  public  Item forwardItemById(int id){
+    for(Item item : webshopRepository.getItemsInitial()){
+      if (item.getId() == id){
+        return item;
+      }
+    }
+    return null;
+  }
+
+  public Item forwardEmptyItem(){
+    return webshopRepository.getEmptyItem();
+  }
 
   public void filterLogic(FilterQueryHolder filterQueryHolder) {
 

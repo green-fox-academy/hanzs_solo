@@ -22,3 +22,32 @@
 02:00:44 | 0:0:0:0:0:0:0:1 filtered items: search='columbian, inDescription=true, shortBy='name, isDescending=null, availableOnly=null
 02:00:48 | 0:0:0:0:0:0:0:1 filtered items: search='a, inDescription=true, shortBy='name, isDescending=null, availableOnly=null
 02:00:56 | 0:0:0:0:0:0:0:1 filtered items: search='a, inDescription=true, shortBy='price, isDescending=null, availableOnly=null
+02:10:35 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:13:27 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:13:59 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:15:28 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:17:27 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:23:41 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:28:42 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:29:50 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:31:36 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:32:24 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:33:01 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:33:52 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:34:48 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:41:47 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:42:38 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:43:41 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:44:44 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:45:38 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:47:27 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:48:32 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:51:42 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:52:03 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:54:19 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+02:57:44 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+03:01:54 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+03:02:51 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+03:04:06 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+03:05:59 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+03:10:11 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
