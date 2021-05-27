@@ -3,26 +3,18 @@ body {
   font-family: Consolas, monospace;
 }
 
-.admin-mode-nav-bar{
-  margin: 10px auto;
-}
-
-.admin-mode-main-table {
+.main-table {
   border-collapse: collapse;
   margin: 0 auto;
   text-align: center;
 }
 
-.admin-mode-main-table tr {
-}
-
-
-.admin-mode-main-table td {
+.main-table td {
   padding: 2% 0;
   border: 3px solid grey;
 }
 
-.admin-mode-main-table h4, .admin-mode-main-table h3 {
+.main-table h4, .main-table h3 {
   margin: 0;
 }
 
@@ -35,16 +27,56 @@ body {
   padding: 0 10px;
 }
 
-.exclude-table th {
+.item-list-table th {
   text-align: left;
 }
 
-.exclude-table td {
+.item-list-table td {
   border: 0;
   text-align: left;
   padding: 0 5px;
 }
 
-.exclude-table .mod-buttons{
+.item-list-table .mod-buttons{
   padding: 0;
+}
+
+.valami td{
+  border: 0;
+}
+.valami .labels{
+  text-align: right;
+}
+
+.valami .inputs{
+  text-align: left;
+}
+
+.access-denied, .admin-mode-login{
+  margin:  0 auto;
+  text-align: center;
+}
+
+.access-denied h1{
+  color: red;
+}
+
+.admin-mode-login h1{
+  font-size: 24px;
+}
+
+.main-title{
+  margin: 10px auto;
+  text-align: center;
+}
+
+.nav-bar {
+  margin: 0 auto;
+  border: 0;
+}
+
+.nav-bar td{
+  margin: 0 auto;
+  border: 0;
+  text-align: center;
 }

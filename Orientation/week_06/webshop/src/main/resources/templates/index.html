@@ -3,54 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <link rel="stylesheet" href="../static/styles.css">
+  <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
-<form class="navbar">
-  <input type="submit" formaction="/reset" value="HOME"/>
-  <input type="submit" formaction="/adminmodelogin" value="ADMIN MODE"/>
-</form>
-<br>
-<form >
-  <input name="search" type="search" th:value="${lastFilterQuery.search}" placeholder="search something..">
-  <label for="indes">search in description</label>
-  <input type="checkbox" name="inDescription" id="indes" th:checked="${lastFilterQuery.inDescription == true}">
-  <br>
-  <label for="sort">sort by: </label>
-  <select name="shortBy" id="sort">
-    <option value="price" th:selected="${lastFilterQuery.getShortBy()} == 'price'" >price</option>
-    <option value="name" th:selected="${lastFilterQuery.getShortBy()} == 'name'" >name</option>
-    <option value="quantity" th:selected="${lastFilterQuery.getShortBy()} == 'quantity'" >quantity</option>
-  </select>
-  <label for="des">descending</label>
-  <input type="checkbox" name="isDescending" id="des"th:checked="${lastFilterQuery.isDescending == true}">
-  <br>
-  <label for="box">show only available</label>
-  <input type="checkbox" name="availableOnly" id="box"th:checked="${lastFilterQuery.availableOnly == true}">
-  <br>
-  <input type="text" name="redirectPath" value="webshop" hidden>
-  <input type="submit" formaction="filter-results" value="filter">
-  <input type="submit" formaction="reset-filters" value="reset filters">
-</form>
-<br>
-<table>
-  <th>name</th>
-  <th>description</th>
-  <th>price</th>
-  <th>stock</th>
-  <tr th:each="item : ${items}">
-    <td th:text="${item.name}"></td>
-    <td th:text="${item.description}"></td>
-    <td th:text="${item.price}"></td>
-    <td th:text="${item.stock}"></td>
+<h1 class="main-title">webshop</h1>
+      <table class="nav-bar">
+        <form>
+          <tr>
+            <td>
+              <input type="submit" formaction="/reset" value="HOME"/>
+            </td>
+            <td>
+              <input type="submit" formaction="/adminmodelogin" value="ADMIN MODE"/>
+            </td>
+          </tr>
+        </form>
+      </table>
+<table class="main-table">
+<!--  <tr>-->
+<!--    <td>-->
+<!--    </td>-->
+<!--  </tr>-->
+  <tr>
     <td>
-      <form th:action="@{'/buy/' + ${item.id}}" method="get">
-        <input type="submit" value="buy"/>
+      <form>
+        <input name="search" type="search" th:value="${lastFilterQuery.search}"
+               placeholder="search something..">
+        <label for="indes">search in description</label>
+        <input type="checkbox" name="inDescription" id="indes"
+               th:checked="${lastFilterQuery.inDescription == true}">
+        <br>
+        <label for="sort">sort by: </label>
+        <select name="shortBy" id="sort">
+          <option value="price" th:selected="${lastFilterQuery.getShortBy()} == 'price'">price
+          </option>
+          <option value="name" th:selected="${lastFilterQuery.getShortBy()} == 'name'">name</option>
+          <option value="quantity" th:selected="${lastFilterQuery.getShortBy()} == 'quantity'">
+            quantity
+          </option>
+        </select>
+        <label for="des">descending</label>
+        <input type="checkbox" name="isDescending" id="des"
+               th:checked="${lastFilterQuery.isDescending == true}">
+        <br>
+        <label for="box">show only available</label>
+        <input type="checkbox" name="availableOnly" id="box"
+               th:checked="${lastFilterQuery.availableOnly == true}">
+        <br>
+        <input type="text" name="redirectPath" value="webshop" hidden>
+        <input type="submit" formaction="filter-results" value="filter">
+        <input type="submit" formaction="reset-filters" value="reset filters">
       </form>
     </td>
   </tr>
+  <tr>
+    <td>
+      <table class="item-list-table">
+        <th>name</th>
+        <th>description</th>
+        <th>price</th>
+        <th>stock</th>
+        <tr th:each="item : ${items}">
+          <td th:text="${item.name}"></td>
+          <td th:text="${item.description}"></td>
+          <td th:text="${item.price}"></td>
+          <td th:text="${item.stock}"></td>
+          <td>
+            <form th:action="@{'/buy/' + ${item.id}}" method="get">
+              <input type="submit" value="buy"/>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h4 th:text="'your balance: ' + ${wallet}"></h4>
+    </td>
+  </tr>
 </table>
-<h4 th:text="'your balance: ' + ${wallet}"></h4>
 </body>
 </html>

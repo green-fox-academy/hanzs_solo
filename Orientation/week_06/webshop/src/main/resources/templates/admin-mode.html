@@ -6,16 +6,18 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<table class="admin-mode-nav-bar">
-  <tr>
-    <td>
-      <form>
-        <button formaction="/webshop">return to webshop</button>
-      </form>
-    </td>
-  </tr>
+<h1 class="main-title">admin-mode: be careful</h1>
+<table class="nav-bar">
+  <form>
+    <tr>
+      <td>
+        <button formaction="/webshop">RETURN TO WEBSHOP</button>
+      </td>
+    </tr>
+  </form>
 </table>
-<table class="admin-mode-main-table">
+
+<table class="main-table">
   <tr>
     <td>
       <h4>add new item</h4>
@@ -25,49 +27,86 @@
     </td>
   </tr>
   <tr>
-    <td class="mod-section">
-      <form action="/add" method="post">
-        <label>name</label>
-        <input type="text" name="name" placeholder="name">
-        <br>
-        <label>description</label>
-        <input type="text" name="description" placeholder="description">
-        <br>
-        <label>price</label>
-        <input type="number" name="price" placeholder="price">
-        <br>
-        <label>stock</label>
-        <input type="number" name="stock" placeholder="stock">
-        <br>
-        <input type="submit" value="add"/>
-      </form>
+    <td>
+      <table class="valami">
+        <form action="/add" method="post">
+          <tr>
+            <td class="labels">
+              <label>name</label>
+              <br>
+              <label>description</label>
+              <br>
+              <label>price</label>
+              <br>
+              <label>stock</label>
+            </td>
+            <td class="inputs">
+              <input type="text" name="name" placeholder="name">
+              <br>
+              <input type="text" name="description" placeholder="description">
+              <br>
+              <input type="number" name="price" placeholder="price">
+              <br>
+              <input type="number" name="stock" placeholder="stock">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="add"/>
+            </td>
+          </tr>
+        </form>
+      </table>
     </td>
-    <td class="mod-section">
-      <form action="/modify" method="post">
-        <label>id</label>
-        <input type="number" th:value="${item?.id}" name="autoFillId"
-               placeholder="search item by id">
-        <br>
-        <input width="auto" type="submit" value="autofill with old values" formaction="/autofill"
-               formmethod="get"/>
-        <br>
-        <input type="number" name="id" th:value="${item?.id}" hidden>
-        <br>
-        <label>name</label>
-        <input type="text" name="name" th:value="${item?.name}" placeholder="new name">
-        <br>
-        <label>description</label>
-        <input type="text" name="description" th:value="${item?.description}"
-               placeholder="new description">
-        <br>
-        <label>price</label>
-        <input type="number" name="price" th:value="${item?.price}" placeholder="new price">
-        <br>
-        <label>stock</label>
-        <input type="number" name="stock" th:value="${item?.stock}" placeholder="new amount">
-        <br>
-        <input type="submit" value="modify">
-      </form>
+    <td>
+      <table class="valami">
+        <form action="/modify" method="post">
+          <tr>
+            <td class="labels">
+              <label>id</label>
+            </td>
+            <td class="inputs">
+              <input type="number" th:value="${item?.id}" name="autoFillId"
+                     placeholder="select item by id">
+            </td>
+          </tr>
+          <tr>
+            <input type="number" name="id" th:value="${item?.id}" hidden>
+            <td colspan="2">
+              <input type="submit" value="autofill with old values" formaction="/autofill"
+                     formmethod="get"/>
+            </td>
+          </tr>
+          <tr>
+            <td class="labels">
+              <label>name</label>
+              <br>
+              <label>description</label>
+              <br>
+              <label>price</label>
+              <br>
+              <label>stock</label>
+            </td>
+            <td class="inputs">
+              <input type="text" name="name" th:value="${item?.name}" placeholder="new name">
+              <br>
+              <input type="text" name="description" th:value="${item?.description}"
+                     placeholder="new description">
+              <br>
+              <input type="number" name="price" th:value="${item?.price}" placeholder="new price">
+              <br>
+              <input type="number" name="stock" th:value="${item?.stock}"
+                     placeholder="new amount">
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="modify">
+            </td>
+          </tr>
+        </form>
+      </table>
     </td>
   </tr>
   <tr>
@@ -88,7 +127,8 @@
         <select name="shortBy" id="sort">
           <option value="price" th:selected="${lastFilterQuery.getShortBy()} == 'price'">price
           </option>
-          <option value="name" th:selected="${lastFilterQuery.getShortBy()} == 'name'">name</option>
+          <option value="name" th:selected="${lastFilterQuery.getShortBy()} == 'name'">name
+          </option>
           <option value="quantity" th:selected="${lastFilterQuery.getShortBy()} == 'quantity'">
             quantity
           </option>
@@ -109,7 +149,7 @@
   </tr>
   <tr>
     <td colspan="2">
-      <table class="exclude-table">
+      <table class="item-list-table">
         <th>id</th>
         <th>name</th>
         <th>description</th>

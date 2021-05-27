@@ -173,6 +173,7 @@ public class WebshopService {
         webshopRepository.setItemsInitial(newList);
       }
     }
+    webshopRepository.setItemAutoFill(null);
   }
 
   public void removeService(int id) {
@@ -198,10 +199,9 @@ public class WebshopService {
 
 
   public void addService(Item newItem) {
-
     List<Item> newList = webshopRepository.getItemsInitial();
-    newList.add(new Item(newItem.getName(), newItem.getDescription(), newItem.getPrice(),
-        newItem.getStock()));
+    newList.add(new Item(newItem.getName(), newItem.getDescription(),
+        newItem.getPrice(),newItem.getStock()));
     webshopRepository.setItemsInitial(newList);
   }
 

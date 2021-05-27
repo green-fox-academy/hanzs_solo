@@ -2,7 +2,6 @@ package com.gfa.webshop.controllers;
 
 import com.gfa.webshop.models.FilterQueryHolder;
 import com.gfa.webshop.models.Item;
-import com.gfa.webshop.repositorys.WebshopRepository;
 import com.gfa.webshop.services.WebshopService;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,7 +94,6 @@ public class WebshopController {
 
   @PostMapping("/add")
   public String add(Item newItem) {
-    System.out.println(newItem);
     webshopService.addService(newItem);
     return "redirect:/admin-mode";
   }
