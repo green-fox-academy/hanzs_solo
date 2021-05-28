@@ -21,3 +21,13 @@
 10:16:02 | 188.157.220.94 -     **ACCESS DENIED**
 10:23:03 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
 10:23:03 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+10:27:34 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: adminb
+10:27:34 | 0:0:0:0:0:0:0:1 -     **ACCESS DENIED**
+10:27:38 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+10:27:38 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+10:27:52 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+10:27:52 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+10:27:59 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+10:27:59 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+10:28:18 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+10:28:18 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified

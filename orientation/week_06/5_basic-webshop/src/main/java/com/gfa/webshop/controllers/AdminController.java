@@ -76,9 +76,9 @@ public class AdminController {
   }
 
   @GetMapping("/autofill")
-  public String autofill(@RequestParam Integer autoFillId) {
-    System.out.println(autoFillId);
-    adminService.autoFillService(autoFillId);
+  public String autofill(@RequestParam Integer id) {
+    System.out.println(id);
+    adminService.autoFillService(id);
     return "redirect:/admin-mode";
   }
 

@@ -66,12 +66,11 @@
               <label>id</label>
             </td>
             <td class="inputs">
-              <input type="number" th:value="${item?.id}" name="autoFillId"
+              <input type="number" th:value="${item?.id}" name="id"
                      placeholder="select item by id" required>
             </td>
           </tr>
           <tr>
-<!--            <input type="number" name="id" th:value="${item?.id}" hidden>-->
             <td colspan="2">
               <input type="submit" value="autofill with current values" formaction="/autofill"
                      formmethod="get"/>
