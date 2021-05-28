@@ -214,3 +214,17 @@
 14:18:57 | 0:0:0:0:0:0:0:1 filtered items: search=', inDescription=null, shortBy='name, isDescending=null, availableOnly=null
 14:19:03 | 0:0:0:0:0:0:0:1 filtered items: search='bread, inDescription=null, shortBy='price, isDescending=true, availableOnly=null
 14:20:32 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+15:05:25 | 0:0:0:0:0:0:0:1 filtered items: search=', inDescription=null, shortBy='price, isDescending=null, availableOnly=null
+15:05:26 | 0:0:0:0:0:0:0:1 filtered items: search=', inDescription=null, shortBy='price, isDescending=null, availableOnly=null
+15:05:28 | 0:0:0:0:0:0:0:1 filtered items: search=', inDescription=null, shortBy='quantity, isDescending=null, availableOnly=null
+15:05:31 | 0:0:0:0:0:0:0:1 filtered items: search=', inDescription=null, shortBy='price, isDescending=true, availableOnly=true
+15:05:42 | 0:0:0:0:0:0:0:1 filtered items: search=', inDescription=null, shortBy='name, isDescending=true, availableOnly=true
+15:08:57 | 0:0:0:0:0:0:0:1 filtered items: search=', inDescription=null, shortBy='price, isDescending=null, availableOnly=null
+15:09:00 | 0:0:0:0:0:0:0:1 filtered items: search=', inDescription=null, shortBy='price, isDescending=true, availableOnly=null
+15:09:20 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+15:11:08 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+15:15:03 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+15:28:53 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: asfas  **ACCESS DENIED**
+15:36:32 | 0:0:0:0:0:0:0:1 tried to access admin mode with password: admin  **ACCESS GRANTED**
+15:53:11 | 0:0:0:0:0:0:0:1 filtered items: search=', inDescription=null, shortBy='price, isDescending=null, availableOnly=null
+15:53:14 | 0:0:0:0:0:0:0:1 filtered items: search=', inDescription=null, shortBy='price, isDescending=true, availableOnly=true

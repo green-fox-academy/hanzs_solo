@@ -41,6 +41,10 @@ body {
   padding: 0;
 }
 
+.valami {
+  margin: 0 auto;
+}
+
 .valami td{
   border: 0;
 }
@@ -79,4 +83,10 @@ body {
   margin: 0 auto;
   border: 0;
   text-align: center;
+}
+
+.hint {
+  margin-top: 32%;
+  font-size: 60%;
+  color: grey;
 }

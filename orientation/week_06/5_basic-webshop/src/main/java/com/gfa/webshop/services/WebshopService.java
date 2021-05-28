@@ -24,57 +24,24 @@ import org.springframework.stereotype.Service;
 @Service
 public class WebshopService {
 
-  List<String> logList;
-  WebshopRepository webshopRepository;
+  List<String> logToList;
+  private final LogService logService;
+  private final WebshopRepository webshopRepository;
 
   @Autowired
-  public WebshopService(WebshopRepository webshopRepository) {
-    logList = new ArrayList<>();
-    logList.add("");
+  public WebshopService(WebshopRepository webshopRepository, LogService logService) {
     this.webshopRepository = webshopRepository;
+    this.logService = logService;
   }
 
-  public List<Item> forwardItemsInitial() {
-    return webshopRepository.getItemsInitial();
-  }
-
-  public List<Item> forwardItemsFiltered() {
-    return webshopRepository.getItemsFiltered();
-  }
-
-  public long forwardBalance() {
-    return webshopRepository.getBalance();
-  }
-
-  public Item forwardItemById(int id) {
-    for (Item item : webshopRepository.getItemsInitial()) {
-      if (item.getId() == id) {
-        return item;
-      }
-    }
-    return null;
-  }
-
-//  public Item forwardEmptyItem(){
-//    return webshopRepository.getItemEmpty();
-//  }
-
-  public Item forwardAutoFillItem() {
-    return webshopRepository.getItemAutoFill();
-  }
-
-  public void setItemAutofill(Item item) {
-    webshopRepository.setItemAutoFill(item);
-  }
-
-  public void filterLogic(FilterQueryHolder filterQueryHolder) {
+  public void filterService(FilterQueryHolder filterQueryHolder) {
 
     Comparator<Item> orderByComparator = getItemComparator(filterQueryHolder);
     Predicate<Item> searchByPredicate = getSearchByPredicate(filterQueryHolder);
     Predicate<Item> availableOnlyPredicate = getAvailableOnlyPredicate(filterQueryHolder);
 
     webshopRepository.setItemsFiltered(
-        webshopRepository.getItemsWithoutCart()
+        webshopRepository.getItemsMain()
             .stream()
             .filter(searchByPredicate)
             .filter(availableOnlyPredicate)
@@ -120,117 +87,7 @@ public class WebshopService {
   }
 
   public void resetFiltersService() {
-    webshopRepository.setItemsFiltered(webshopRepository.getItemsInitial());
+    webshopRepository.setItemsFiltered(webshopRepository.getItemsMain());
   }
 
-  public void buyService(int index) {
-    for (Item item : webshopRepository.getItemsInitial()) {
-      if (item.getId() == index && item.getStock() > 0) {
-        item.setStock(item.getStock() - 1);
-        webshopRepository.setBalance(webshopRepository.getBalance() - item.getPrice());
-      }
-    }
-  }
-
-  public String verifyPassService(HttpServletRequest request, String password) {
-    if (!password.equals("admin")) {
-      log(request.getRemoteAddr()
-          + " tried to access admin mode with password: " + password
-          + "  **ACCESS DENIED**"
-      );
-      return "access-denied";
-    } else {
-      log(request.getRemoteAddr()
-          + " tried to access admin mode with password: " + password
-          + "  **ACCESS GRANTED**"
-      );
-    }
-    resetFiltersService();
-    return "redirect:/admin-mode";
-  }
-
-
-  public void autoFillService(Integer id) {
-    if (id == null) {
-      webshopRepository.setItemAutoFill(null);
-      return;
-    }
-    for (Item item : webshopRepository.getItemsInitial()) {
-      if (item.getId() == id) {
-        webshopRepository.setItemAutoFill(item);
-        return;
-      }
-    }
-    webshopRepository.setItemAutoFill(null);
-  }
-
-  public void modifyService(Item newItem) {
-    List<Item> newList = webshopRepository.getItemsInitial();
-
-    for (int i = 0; i < newList.size(); i++) {
-      if (newList.get(i).getId() == newItem.getId()) {
-        newList.set(i, newItem);
-        webshopRepository.setItemsInitial(newList);
-      }
-    }
-    webshopRepository.setItemAutoFill(null);
-  }
-
-  public void removeService(int id) {
-    List<Item> newInitialList = webshopRepository.getItemsInitial();
-
-    List<Item> newFilteredList = webshopRepository.getItemsInitial();
-    for (int i = 0; i < newFilteredList.size(); i++) {
-      if (newFilteredList.get(i).getId() == id) {
-        newFilteredList.remove(i);
-        webshopRepository.setItemsFiltered(newFilteredList);
-        return;
-      }
-    }
-
-    for (int i = 0; i < newInitialList.size(); i++) {
-      if (newInitialList.get(i).getId() == id) {
-        newInitialList.remove(i);
-        webshopRepository.setItemsInitial(newInitialList);
-        return;
-      }
-    }
-  }
-
-
-  public void addService(Item newItem) {
-    List<Item> newList = webshopRepository.getItemsInitial();
-    newList.add(new Item(newItem.getName(), newItem.getDescription(),
-        newItem.getPrice(),newItem.getStock()));
-    webshopRepository.setItemsInitial(newList);
-  }
-
-  public void log(String log) {
-    LocalDateTime now = LocalDateTime.now();
-    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-    DateTimeFormatter dateTimeFormatterForPath = DateTimeFormatter.ofPattern("yyyy.MM.dd.");
-    Path logPath = Paths.get(
-        "src/main/java/com/gfa/webshop/logs/logs_" + dateTimeFormatterForPath.format(now) + "txt");
-
-    log = dateTimeFormatter.format(now) + " | " + log;
-    tryToLog(log, logPath);
-
-  }
-
-  private void tryToLog(String log, Path logPath) {
-    System.out.println(log);
-    logList.set(0, log);
-    if (!Files.exists(logPath)) {
-      try {
-        Files.createFile(logPath);
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-    }
-    try {
-      Files.write(logPath, logList, StandardOpenOption.APPEND);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
 }

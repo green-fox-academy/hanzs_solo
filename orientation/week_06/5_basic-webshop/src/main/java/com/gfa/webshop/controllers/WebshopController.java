@@ -2,6 +2,10 @@ package com.gfa.webshop.controllers;
 
 import com.gfa.webshop.models.FilterQueryHolder;
 import com.gfa.webshop.models.Item;
+import com.gfa.webshop.services.AdminService;
+import com.gfa.webshop.services.CustomerService;
+import com.gfa.webshop.services.DataService;
+import com.gfa.webshop.services.LogService;
 import com.gfa.webshop.services.WebshopService;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,17 +19,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class WebshopController {
 
-  WebshopService webshopService;
-  FilterQueryHolder defaultFilterQuery;
-  FilterQueryHolder lastFilterQuery;
-  Item itemAutoFill;
+  private final WebshopService webshopService;
+  private final LogService logService;
+  private final DataService dataService;
+
+  private final CustomerService customerService;
 
   @Autowired
-  public WebshopController(WebshopService webshopService) {
+  public WebshopController(WebshopService webshopService,
+      DataService dataService,
+      CustomerService customerService,
+      LogService logService) {
     this.webshopService = webshopService;
-    defaultFilterQuery = new FilterQueryHolder("", null, "price", null, null);
-    lastFilterQuery = defaultFilterQuery;
-    //itemAutoFill = webshopService.forwardEmptyItem();
+    this.customerService = customerService;
+    this.dataService = dataService;
+    this.logService = logService;
   }
 
   @GetMapping("/")
@@ -35,16 +43,16 @@ public class WebshopController {
 
   @GetMapping("/webshop")
   public String webshop(Model model) {
-    model.addAttribute("items", webshopService.forwardItemsFiltered());
-    model.addAttribute("wallet", webshopService.forwardBalance());
-    model.addAttribute("lastFilterQuery", lastFilterQuery);
+    model.addAttribute("items", dataService.getItemsFiltered());
+    model.addAttribute("wallet", dataService.getBalance());
+    model.addAttribute("lastFilterQuery", dataService.getLastFilterQuery());
     return "index";
   }
 
   @GetMapping("/reset-filters")
   public String resetFilters(@RequestParam String redirectPath) {
     webshopService.resetFiltersService();
-    lastFilterQuery = defaultFilterQuery;
+    dataService.setLastFilterQuery(dataService.getDefaultFilterQuery());
     return "redirect:/" + redirectPath;
   }
 
@@ -53,63 +61,19 @@ public class WebshopController {
       FilterQueryHolder filterQueryHolder,
       @RequestParam String redirectPath) {
 
-    webshopService.log(request.getRemoteAddr() + " filtered items: " + filterQueryHolder);
-    webshopService.filterLogic(filterQueryHolder);
+    System.out.println(filterQueryHolder);
+    logService.log(request, "filtering results");
 
-    lastFilterQuery = filterQueryHolder;
+    webshopService.filterService(filterQueryHolder);
+    dataService.setLastFilterQuery(filterQueryHolder);
 
     return "redirect:/" + redirectPath;
   }
 
   @GetMapping("/buy/{index}")
   public String buy(@PathVariable int index) {
-    webshopService.buyService(index);
+    customerService.buyService(index);
     return "redirect:/webshop";
-  }
-
-  @GetMapping("/adminmodelogin")
-  public String adminModeLogin(Model model) {
-    return "admin-mode-login";
-  }
-
-  @GetMapping("/verify")
-  public String verify(HttpServletRequest request,
-      @RequestParam String password, Model model) {
-    return webshopService.verifyPassService(request, password);
-  }
-
-  @GetMapping("/admin-mode")
-  public String adminMode(Model model) {
-    model.addAttribute("item", webshopService.forwardAutoFillItem());
-    model.addAttribute("items", webshopService.forwardItemsFiltered());
-    model.addAttribute("lastFilterQuery", lastFilterQuery);
-    return "admin-mode";
-  }
-
-  @GetMapping("/remove")
-  public String remove(@RequestParam Integer id) {
-    webshopService.removeService(id);
-    return "redirect:/admin-mode";
-  }
-
-  @PostMapping("/add")
-  public String add(Item newItem) {
-    webshopService.addService(newItem);
-    return "redirect:/admin-mode";
-  }
-
-  @GetMapping("/autofill")
-  public String autofill(@RequestParam Integer autoFillId) {
-    System.out.println(autoFillId);
-    webshopService.autoFillService(autoFillId);
-    return "redirect:/admin-mode";
-  }
-
-  @PostMapping("/modify")
-  public String modify(Item newItem) {
-    webshopService.modifyService(newItem);
-    itemAutoFill = newItem;
-    return "redirect:/admin-mode";
   }
 
 }

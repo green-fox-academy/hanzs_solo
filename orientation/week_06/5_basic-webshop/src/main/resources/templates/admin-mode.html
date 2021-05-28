@@ -67,13 +67,13 @@
             </td>
             <td class="inputs">
               <input type="number" th:value="${item?.id}" name="autoFillId"
-                     placeholder="select item by id">
+                     placeholder="select item by id" required>
             </td>
           </tr>
           <tr>
-            <input type="number" name="id" th:value="${item?.id}" hidden>
+<!--            <input type="number" name="id" th:value="${item?.id}" hidden>-->
             <td colspan="2">
-              <input type="submit" value="autofill with old values" formaction="/autofill"
+              <input type="submit" value="autofill with current values" formaction="/autofill"
                      formmethod="get"/>
             </td>
           </tr>
@@ -102,7 +102,7 @@
           </tr>
           <tr>
             <td colspan="2">
-              <input type="submit" value="modify">
+              <input type="submit" value="save">
             </td>
           </tr>
         </form>
@@ -170,7 +170,7 @@
           <td class="mod-buttons">
             <form action="remove" method="get">
               <input type="number" name="autoFillId" th:value="${item.id}" hidden>
-              <input type="submit" value="modify" formaction="/autofill"
+              <input type="submit" value="select for modifying" formaction="/autofill"
                      formmethod="get"/>
             </form>
           </td>

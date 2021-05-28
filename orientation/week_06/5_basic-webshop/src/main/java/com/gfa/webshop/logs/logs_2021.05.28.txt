@@ -1,0 +1,23 @@
+10:02:39 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+10:02:39 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+10:04:15 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+10:04:15 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+10:05:30 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+10:05:30 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+10:05:44 | 0:0:0:0:0:0:0:1 - filtering results
+10:05:48 | 0:0:0:0:0:0:0:1 - filtering results
+10:08:56 | 0:0:0:0:0:0:0:1 - filtering results
+10:14:28 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+10:14:28 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+10:14:42 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+10:14:42 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+10:14:52 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+10:14:52 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+10:15:49 | 188.157.220.94 - attempts to ACCESS ADMIN MODE with password: addmin
+10:15:49 | 188.157.220.94 -     **ACCESS DENIED**
+10:15:57 | 188.157.220.94 - attempts to ACCESS ADMIN MODE with password: gergo
+10:15:57 | 188.157.220.94 -     **ACCESS DENIED**
+10:16:02 | 188.157.220.94 - attempts to ACCESS ADMIN MODE with password: pénisz
+10:16:02 | 188.157.220.94 -     **ACCESS DENIED**
+10:23:03 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+10:23:03 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
