@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>login</title>
+  <link rel="stylesheet" th:href="styles.css">
+</head>
+<body>
+<body>
+<form>
+  <input type="submit" formaction="/register" formmethod="get" value="register">
+</form>
+<p class="isTeal">login to your account:></p>
+<form>
+  <input type="text" name="username" required>
+  <br>
+  <input type="password" name="password" required>
+  <br>
+  <input type="submit" formaction="/login" formmethod="post" value="login">
+</form>
+</body>
+</html>

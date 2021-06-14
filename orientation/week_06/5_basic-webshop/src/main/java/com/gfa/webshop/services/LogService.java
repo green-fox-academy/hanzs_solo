@@ -1,6 +1,5 @@
 package com.gfa.webshop.services;
 
-import com.gfa.webshop.repositorys.WebshopRepository;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -24,7 +23,6 @@ public class LogService {
     logToList = new ArrayList<>();
     logToList.add("");
   }
-
 
   public void log(String log) {
     logLogic("anonymus - " + log);

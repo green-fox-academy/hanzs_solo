@@ -31,3 +31,118 @@
 10:27:59 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
 10:28:18 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
 10:28:18 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+10:31:58 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+10:31:58 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+10:32:05 | 0:0:0:0:0:0:0:1 - wants to ADD a new item to main list
+10:32:05 | 0:0:0:0:0:0:0:1 -     **SUCCESS** new item added
+10:33:30 | 0:0:0:0:0:0:0:1 - wants to ADD a new item to main list
+10:33:30 | 0:0:0:0:0:0:0:1 -     **SUCCESS** new item added
+10:34:10 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+10:34:10 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+10:35:08 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+10:35:10 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+10:35:11 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+10:35:12 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+10:35:14 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+10:35:15 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+10:35:22 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+10:35:23 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+10:35:23 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+10:35:23 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+11:49:58 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+11:49:58 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+12:10:12 | 86.59.136.163 - attempts to ACCESS ADMIN MODE with password: admin
+12:10:12 | 86.59.136.163 -     **ACCESS GRANTED**
+12:10:49 | 86.59.136.163 - filtering results
+12:10:51 | 86.59.136.163 - filtering results
+12:44:53 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+12:44:53 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+12:44:56 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+12:44:57 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+12:50:32 | 0:0:0:0:0:0:0:1 - filtering results
+12:50:35 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+12:50:36 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+12:50:40 | 0:0:0:0:0:0:0:1 - wants to ADD a new item to main list
+12:50:40 | 0:0:0:0:0:0:0:1 -     **SUCCESS** new item added
+12:51:01 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+12:51:01 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+12:53:42 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+12:53:42 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+12:53:47 | 0:0:0:0:0:0:0:1 - filtering results
+12:54:18 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: 
+12:54:18 | 0:0:0:0:0:0:0:1 -     **ACCESS DENIED**
+12:55:40 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+12:55:40 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+13:10:01 | 0:0:0:0:0:0:0:1 - filtering results
+13:10:03 | 0:0:0:0:0:0:0:1 - filtering results
+13:10:09 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+13:10:09 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+13:10:16 | 0:0:0:0:0:0:0:1 - wants to ADD a new item to main list
+13:10:16 | 0:0:0:0:0:0:0:1 -     **SUCCESS** new item added
+13:10:20 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+13:10:20 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+14:15:23 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+14:15:23 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+14:15:28 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+14:15:28 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+14:15:34 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+14:15:34 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+14:15:45 | 0:0:0:0:0:0:0:1 - wants to ADD a new item to main list
+14:15:45 | 0:0:0:0:0:0:0:1 -     **SUCCESS** new item added
+14:21:00 | 188.157.220.94 - attempts to ACCESS ADMIN MODE with password: hanzs
+14:21:00 | 188.157.220.94 -     **ACCESS DENIED**
+14:22:41 | 188.157.220.94 - attempts to ACCESS ADMIN MODE with password: jelszo
+14:22:41 | 188.157.220.94 -     **ACCESS DENIED**
+14:22:47 | 188.157.220.94 - attempts to ACCESS ADMIN MODE with password: password
+14:22:47 | 188.157.220.94 -     **ACCESS DENIED**
+14:23:24 | 188.157.220.94 - attempts to ACCESS ADMIN MODE with password: &name=gergo
+14:23:24 | 188.157.220.94 -     **ACCESS DENIED**
+15:34:12 | 0:0:0:0:0:0:0:1 - filtering results
+15:34:16 | 0:0:0:0:0:0:0:1 - filtering results
+15:34:23 | 0:0:0:0:0:0:0:1 - filtering results
+15:34:44 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: stgujhrt
+15:34:44 | 0:0:0:0:0:0:0:1 -     **ACCESS DENIED**
+15:34:50 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+15:34:50 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+15:35:01 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+15:35:02 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+15:35:03 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+15:35:18 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+15:35:18 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+15:35:29 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+15:35:29 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+15:35:34 | 0:0:0:0:0:0:0:1 - wants to ADD a new item to main list
+15:35:34 | 0:0:0:0:0:0:0:1 -     **SUCCESS** new item added
+15:47:35 | 0:0:0:0:0:0:0:1 - filtering results
+16:08:37 | 176.63.1.217 - filtering results
+16:08:41 | 176.63.1.217 - filtering results
+16:09:40 | 92.249.156.21 - filtering results
+16:09:44 | 92.249.156.21 - filtering results
+18:00:43 | 80.99.172.194 - filtering results
+18:00:58 | 80.99.172.194 - filtering results
+18:01:12 | 80.99.172.194 - filtering results
+18:12:27 | 188.157.220.94 - attempts to ACCESS ADMIN MODE with password: mi a jelszó?
+18:12:27 | 188.157.220.94 -     **ACCESS DENIED**
+23:20:55 | 37.76.20.188 - filtering results
+23:21:23 | 0:0:0:0:0:0:0:1 - filtering results
+23:21:48 | 0:0:0:0:0:0:0:1 - filtering results
+23:21:51 | 0:0:0:0:0:0:0:1 - filtering results
+23:22:00 | 0:0:0:0:0:0:0:1 - filtering results
+23:22:12 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: fgvtuzkf
+23:22:12 | 0:0:0:0:0:0:0:1 -     **ACCESS DENIED**
+23:22:20 | 0:0:0:0:0:0:0:1 - attempts to ACCESS ADMIN MODE with password: admin
+23:22:20 | 0:0:0:0:0:0:0:1 -     **ACCESS GRANTED**
+23:22:29 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+23:22:30 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+23:22:31 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+23:22:32 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+23:22:43 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+23:22:43 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+23:22:56 | 0:0:0:0:0:0:0:1 - wants to MODIFY something in main list
+23:22:56 | 0:0:0:0:0:0:0:1 -     **SUCCESS** item modified
+23:22:59 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+23:23:04 | 0:0:0:0:0:0:0:1 - wants to DELETE something from main list
+23:23:09 | 0:0:0:0:0:0:0:1 - filtering results
+23:23:14 | 37.76.20.188 - filtering results
+23:23:55 | 37.76.20.188 - filtering results
+23:24:00 | 37.76.20.188 - filtering results

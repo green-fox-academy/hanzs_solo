@@ -1,0 +1,76 @@
+#logo_img{
+  width: 30px;
+  height: 30px;
+}
+
+#logo_text_1 {
+  color: teal;
+  display: inline;
+}
+
+#logo_text_2 {
+  color: #303030;
+  display: inline;
+}
+
+.post td{
+  padding-bottom: 20px;
+}
+
+.post p{
+  margin: 0;
+}
+
+#vote{
+  padding: 0;
+  text-align: center;
+  vertical-align: top;
+}
+
+.vote_button{
+  padding: 0 2px;
+  margin: 0;
+  font-size: 6px;
+  font-family: Consolas, serif;
+}
+
+#post_score {
+  padding: 0;
+  margin-top: 8px;
+  text-align: center;
+  display: block;
+  font-size: 10px;
+}
+
+#post_title{
+  font-size: 18px;
+  color: teal;
+}
+
+#post_author{
+  font-size: 10px;
+  color: gray;
+}
+
+
+#post_content{
+  font-size: 14px;
+  color: #303030;
+}
+
+#post_date{
+  font-size: 10px;
+  color: gray;
+}
+
+.isTeal{
+  color: teal;
+}
+
+.isDarkGrey{
+  color: #303030;
+}
+
+.isLightGrey{
+  color: gray;
+}

@@ -5,6 +5,7 @@ import com.gfa.webshop.services.AdminService;
 import com.gfa.webshop.services.DataService;
 import com.gfa.webshop.services.LogService;
 import javax.servlet.http.HttpServletRequest;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +20,12 @@ public class AdminController {
   private final DataService dataService;
   private final LogService logService;
 
+
   @Autowired
-  public AdminController(AdminService adminService,
+  public AdminController(
+      AdminService adminService,
       DataService dataService,
-      LogService logService) {
+      LogService logService){
     this.adminService = adminService;
     this.dataService = dataService;
     this.logService = logService;
@@ -37,14 +40,13 @@ public class AdminController {
   public String verify(HttpServletRequest request,
       @RequestParam String password) {
     logService.log(request, "attempts to ACCESS ADMIN MODE with password: " + password);
-    if (adminService.verifyAdminPassService(password)) {
+    if (adminService.verifyAdminPass(password)) {
       logService.log(request, "    **ACCESS GRANTED**");
       return "redirect:/admin-mode";
     }else {
       logService.log(request, "    **ACCESS DENIED**");
       return "access-denied";
     }
-
   }
 
   @GetMapping("/admin-mode")
@@ -60,7 +62,7 @@ public class AdminController {
       @RequestParam Integer id) {
 
     logService.log(request, "wants to DELETE something from main list");
-    if (adminService.removeService(id)) {
+    if (adminService.removeItem(id)) {
       logService.log(request, "    **SUCCESS** item deleted");
     }
     return "redirect:/admin-mode";
@@ -70,15 +72,14 @@ public class AdminController {
   public String add(HttpServletRequest request,
       Item newItem) {
     logService.log(request, "wants to ADD a new item to main list");
-    adminService.addService(newItem);
+    adminService.addItem(newItem);
     logService.log(request, "    **SUCCESS** new item added");
     return "redirect:/admin-mode";
   }
 
   @GetMapping("/autofill")
   public String autofill(@RequestParam Integer id) {
-    System.out.println(id);
-    adminService.autoFillService(id);
+    adminService.autoFillCurrentValues(id);
     return "redirect:/admin-mode";
   }
 
@@ -86,7 +87,7 @@ public class AdminController {
   public String modify(HttpServletRequest request,
       Item newItem) {
     logService.log(request, "wants to MODIFY something in main list");
-    if (adminService.modifyService(newItem)) {
+    if (adminService.modifyItem(newItem)) {
       logService.log(request, "    **SUCCESS** item modified");
     }
     return "redirect:/admin-mode";

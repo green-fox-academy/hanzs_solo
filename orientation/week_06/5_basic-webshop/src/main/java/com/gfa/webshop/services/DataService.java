@@ -4,19 +4,16 @@ import com.gfa.webshop.models.FilterQueryHolder;
 import com.gfa.webshop.models.Item;
 import com.gfa.webshop.repositorys.WebshopRepository;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class DataService {
 
   private final WebshopRepository webshopRepository;
 
-  @Autowired
-  public DataService(WebshopRepository webshopRepository) {
-    this.webshopRepository = webshopRepository;
-  }
-
+  //methods
   public List<Item> getItemsFiltered() {
     return webshopRepository.getItemsFiltered();
   }

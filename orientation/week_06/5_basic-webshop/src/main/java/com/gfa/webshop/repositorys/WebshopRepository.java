@@ -4,9 +4,13 @@ import com.gfa.webshop.models.FilterQueryHolder;
 import com.gfa.webshop.models.Item;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Repository;
 
 @Repository
+@Getter
+@Setter
 public class WebshopRepository {
 
   private List<Item> itemsMain;
@@ -16,6 +20,7 @@ public class WebshopRepository {
   private FilterQueryHolder defaultFilterQuery;
   private FilterQueryHolder lastFilterQuery;
   private Item itemAutoFill;
+
 
   public WebshopRepository() {
     itemsMain = new ArrayList<>();
@@ -38,55 +43,5 @@ public class WebshopRepository {
     itemsMain.add(new Item("chewing gum", "chewing gum for kids", 1, 8));
     itemsMain.add(new Item("condoms x3", "chewing gum not for kids", 3, 16));
     itemsMain.add(new Item("hoodie", "a green hoodie with a fox", 12, 4));
-  }
-
-
-  //getters and setters
-  public List<Item> getItemsMain() {
-    return itemsMain;
-  }
-
-  public void setItemsMain(List<Item> itemsMain) {
-    this.itemsMain = itemsMain;
-  }
-
-  public List<Item> getItemsFiltered() {
-    return itemsFiltered;
-  }
-
-  public void setItemsFiltered(List<Item> itemsFiltered) {
-    this.itemsFiltered = itemsFiltered;
-  }
-
-  public long getBalance() {
-    return balance;
-  }
-
-  public void setBalance(long balance) {
-    this.balance = balance;
-  }
-
-  public FilterQueryHolder getDefaultFilterQuery() {
-    return defaultFilterQuery;
-  }
-
-  public void setDefaultFilterQuery(FilterQueryHolder defaultFilterQuery) {
-    this.defaultFilterQuery = defaultFilterQuery;
-  }
-
-  public FilterQueryHolder getLastFilterQuery() {
-    return lastFilterQuery;
-  }
-
-  public void setLastFilterQuery(FilterQueryHolder lastFilterQuery) {
-    this.lastFilterQuery = lastFilterQuery;
-  }
-
-  public Item getItemAutoFill() {
-    return itemAutoFill;
-  }
-
-  public void setItemAutoFill(Item itemAutoFill) {
-    this.itemAutoFill = itemAutoFill;
   }
 }

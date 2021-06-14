@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form enctype="multipart/form-data">
+  <input type="text" name="title" required>
+  <br>
+  <textarea name="content" required></textarea>
+  <br>
+  <input type="file" name="file" accept="image/png, image/jpg">
+  <br>
+  <input type="submit" th:formaction="'/create/'+${username}" formmethod="post">
+</form>
+</body>
+</html>

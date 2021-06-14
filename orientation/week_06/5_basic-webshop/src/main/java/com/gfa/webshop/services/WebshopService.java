@@ -1,40 +1,21 @@
 package com.gfa.webshop.services;
 
-import java.time.format.DateTimeFormatter;
-import java.time.LocalDateTime;
-
-
 import com.gfa.webshop.models.FilterQueryHolder;
 import com.gfa.webshop.models.Item;
 import com.gfa.webshop.repositorys.WebshopRepository;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import javax.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class WebshopService {
 
-  List<String> logToList;
-  private final LogService logService;
   private final WebshopRepository webshopRepository;
 
-  @Autowired
-  public WebshopService(WebshopRepository webshopRepository, LogService logService) {
-    this.webshopRepository = webshopRepository;
-    this.logService = logService;
-  }
-
-  public void filterService(FilterQueryHolder filterQueryHolder) {
+  public void filterItems(FilterQueryHolder filterQueryHolder) {
 
     Comparator<Item> orderByComparator = getItemComparator(filterQueryHolder);
     Predicate<Item> searchByPredicate = getSearchByPredicate(filterQueryHolder);
@@ -86,7 +67,7 @@ public class WebshopService {
     return availableOnlyPredicate;
   }
 
-  public void resetFiltersService() {
+  public void resetFilters() {
     webshopRepository.setItemsFiltered(webshopRepository.getItemsMain());
   }
 

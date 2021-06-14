@@ -41,13 +41,13 @@
               <label>stock</label>
             </td>
             <td class="inputs">
-              <input type="text" name="name" placeholder="name">
+              <input type="text" name="name" placeholder="name" required>
               <br>
-              <input type="text" name="description" placeholder="description">
+              <input type="text" name="description" placeholder="description" required>
               <br>
-              <input type="number" name="price" placeholder="price">
+              <input type="number" name="price" placeholder="price" required>
               <br>
-              <input type="number" name="stock" placeholder="stock">
+              <input type="number" name="stock" placeholder="stock" required>
             </td>
           </tr>
           <tr>
@@ -87,15 +87,15 @@
               <label>stock</label>
             </td>
             <td class="inputs">
-              <input type="text" name="name" th:value="${item?.name}" placeholder="new name">
+              <input type="text" name="name" th:value="${item?.name}" placeholder="new name" >
               <br>
               <input type="text" name="description" th:value="${item?.description}"
-                     placeholder="new description">
+                     placeholder="new description" >
               <br>
-              <input type="number" name="price" th:value="${item?.price}" placeholder="new price">
+              <input type="number" name="price" th:value="${item?.price}" placeholder="new price" >
               <br>
               <input type="number" name="stock" th:value="${item?.stock}"
-                     placeholder="new amount">
+                     placeholder="new amount" >
               <br>
             </td>
           </tr>
@@ -168,7 +168,7 @@
           </td>
           <td class="mod-buttons">
             <form action="remove" method="get">
-              <input type="number" name="autoFillId" th:value="${item.id}" hidden>
+              <input type="number" name="id" th:value="${item.id}" hidden>
               <input type="submit" value="select for modifying" formaction="/autofill"
                      formmethod="get"/>
             </form>
